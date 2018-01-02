@@ -9,26 +9,26 @@ namespace RogueTest.Engine.Display.Container
     {
         private GameManager parent;
 
-        public void changeResolution(int width_, int height_)
+        public void ChangeResolution(int width_, int height_)
         {
             Width = width_;
             Height = height_;
             return;
         }
 
-        public void changeTitle(string title_)
+        public void ChangeTitle(string title_)
         {
             Title = title_;
             return;
         }
 
-        public void changeIco(System.Drawing.Icon icon_)
+        public void ChangeIco(System.Drawing.Icon icon_)
         {
             Icon = icon_ ;
             return;
         }
 
-        public void changeVSync(bool on_)
+        public void ChangeVSync(bool on_)
         {
             VSync = (!on_)? VSyncMode.Off : VSyncMode.On;
             return;
@@ -40,8 +40,8 @@ namespace RogueTest.Engine.Display.Container
 
             GL.ClearColor(Color4.Black);
 
-            changeResolution(854, 480);
-            changeVSync(false);
+            ChangeResolution(854, 480);
+            ChangeVSync(false);
 
             WindowBorder = WindowBorder.Fixed;
 

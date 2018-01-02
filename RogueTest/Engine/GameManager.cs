@@ -24,9 +24,9 @@ namespace RogueTest.Engine
 
         public void Run()
         {
-            this.gsm.startFirstState();
+            this.gsm.StartFirstState();
 
-            this.dm.startWindow();
+            this.dm.StartWindow();
 
             return;
         }  

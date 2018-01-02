@@ -10,7 +10,7 @@ namespace RogueTest.Engine.GameContent.Characters.Player
 {
     class Player : Character
     {
-        Player()
+        public Player()
         {
             this.floor = 0;
             this.room = new Vector2(8,8);

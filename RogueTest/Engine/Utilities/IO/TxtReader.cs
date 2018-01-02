@@ -16,7 +16,7 @@ namespace RogueTest.Engine.Utilities.IO
             return;
         }
 
-        public string getLine(int lineToGet, string path)
+        public string GetLine(int lineToGet, string path)
         {
             int counter = 0;
             string line, ans = "";

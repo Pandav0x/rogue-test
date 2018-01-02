@@ -8,6 +8,6 @@ namespace RogueTest.Engine.Controls.Events.DeviceEventHandler.Mouse
 {
     class MouseEventHandler
     {
-        public bool isBinded() { return false; }
+        public bool IsBinded() { return false; }
     }
 }

@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Engine\Pictures\Ico\favicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="OpenTK, Version=2.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
       <HintPath>..\packages\OpenTK.2.0.0\lib\net20\OpenTK.dll</HintPath>
@@ -49,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine\AppData.cs" />
     <Compile Include="Engine\Controls\Binding\KeyBinding.cs" />
     <Compile Include="Engine\Controls\Devices\S_Controller.cs" />
     <Compile Include="Engine\Controls\Devices\S_Keyboard.cs" />

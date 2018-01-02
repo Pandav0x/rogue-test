@@ -32,7 +32,7 @@ namespace RogueTest.Engine.GameContent.Level
             return;
         }
 
-        public void generateTile(TileType type_ = TileType.wall, FacingPosition facingPos_ = FacingPosition.Down)
+        public void GenerateTile(TileType type_ = TileType.wall, FacingPosition facingPos_ = FacingPosition.Down)
         {
             this._type = type_;
             this.tileChar = this._type.ToString().ToCharArray()[0];

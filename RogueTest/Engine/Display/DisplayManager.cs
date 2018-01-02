@@ -20,21 +20,21 @@ namespace RogueTest.Engine.Display
             this._parent = parent_;
         }
 
-        public void changeWindowName(string title_)
+        public void ChangeWindowName(string title_)
         {
-            this.window.changeTitle(title_);
+            this.window.ChangeTitle(title_);
             return;
         }
 
-        public void changeWindowIco(string path_)
+        public void ChangeWindowIco(string path_)
         {
-            this.window.changeIco(new System.Drawing.Icon(path_));
+            this.window.ChangeIco(new System.Drawing.Icon(path_));
             return;
         }
 
-        internal void startWindow()
+        internal void StartWindow()
         {
-            this.changeWindowName("This's gonna be sooooooo shitty bro");
+            this.ChangeWindowName("GUI Window");
             this.window.Run_More(this.clockTime, this._parent);
             return;
         }

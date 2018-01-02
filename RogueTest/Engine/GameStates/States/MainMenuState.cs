@@ -10,7 +10,7 @@ namespace RogueTest.Engine.GameStates.States
 
         protected override void Content(params dynamic[] args)
         {
-            xConsole.WriteLine("MainMenu started FUCKER !", ConsoleColor.Yellow);
+            xConsole.WriteLine("Main menu started !", ConsoleColor.Yellow);
             //base._Parent.gameStates["level"].Start();
             return;
         }

@@ -54,7 +54,7 @@ namespace RogueTest.Engine.GameContent.Characters
         /// Check the life of the current character
         /// </summary>
         /// <returns>True if the character is still alive, False if not</returns>
-        public bool isAlive()
+        public bool IsAlive()
         {
             return (this._life <= 0);
         }
@@ -63,7 +63,7 @@ namespace RogueTest.Engine.GameContent.Characters
         /// Change the position of the character in the room
         /// </summary>
         /// <param name="vector_">Changing position vector(2d)</param>
-        public void move(Vector2d vector_)
+        public void Move(Vector2d vector_)
         {
             this._pos += vector_;
             return;

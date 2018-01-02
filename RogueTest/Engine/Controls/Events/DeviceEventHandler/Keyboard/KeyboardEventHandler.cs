@@ -8,30 +8,30 @@ namespace RogueTest.Engine.Controls.Events.DeviceEventHandler.Keyboard
 {
     class KeyboardEventHandler
     {
-        public bool isBinded(KeyboardKeyEventArgs e)
+        public bool IsBinded(KeyboardKeyEventArgs e)
         {
             return KeyBinding.keyboardBind.TryGetValue(e.Key, out string a);
         }
-
-        public void extendedEvent()
+        
+        public void ExtendedEvent()
         {
             return;
         }
 
-        public void keh_KeyDown(object sender, KeyboardKeyEventArgs e)
+        public void Keh_KeyDown(object sender, KeyboardKeyEventArgs e)
         {
-            if (this.isBinded(e))
+            if (this.IsBinded(e))
                 Console.Write("Binded - " + KeyBinding.keyboardBind[e.Key] + "\n");
             xConsole.Write(e.Key.ToString()+" ", ConsoleColor.Red);
             return;
         }
 
-        public void keh_KeyUp(object sender, KeyboardKeyEventArgs e)
+        public void Keh_KeyUp(object sender, KeyboardKeyEventArgs e)
         {
             return;
         }
 
-        public void keh_KeyPress(object sender, KeyPressEventArgs e)
+        public void Keh_KeyPress(object sender, KeyPressEventArgs e)
         {
             return;
         }

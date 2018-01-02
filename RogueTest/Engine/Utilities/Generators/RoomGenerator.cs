@@ -11,7 +11,7 @@ namespace RogueTest.Engine.Utilities.Generators
     {
         public RoomGenerator() { return; }
 
-        public static Room generateRoom(string seed_ = null)
+        public static Room GenerateRoom(string seed_ = null)
         {
             return new Room();
         }

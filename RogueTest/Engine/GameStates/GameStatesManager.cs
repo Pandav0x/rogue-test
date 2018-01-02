@@ -16,16 +16,16 @@ namespace RogueTest.Engine.GameStates
 
         public GameStatesManager(GameManager context)
         {
-            xConsole.WriteLine("Those Fucking Game States Loading...", ConsoleColor.Green);
+            xConsole.WriteLine("Game States Loading...", ConsoleColor.Green);
             this.gameStates.Add("mainMenu", new GameStates.States.MainMenuState(context));
             this.gameStates.Add("lose", new GameStates.States.LoseState(context));
             this.gameStates.Add("win", new GameStates.States.WinState(context));
             this.gameStates.Add("level", new GameStates.States.LevelState(context));
         }
 
-        public void startFirstState()
+        public void StartFirstState()
         {
-            xConsole.WriteLine("Launching first state : FUCK YOU ->" + this.firstStateToLoad, ConsoleColor.DarkMagenta);
+            xConsole.WriteLine("Launching first state -> " + this.firstStateToLoad, ConsoleColor.DarkMagenta);
             this.gameStates[firstStateToLoad].Start();
         }
     }

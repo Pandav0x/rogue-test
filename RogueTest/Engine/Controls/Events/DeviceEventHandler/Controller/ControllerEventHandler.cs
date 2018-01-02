@@ -2,6 +2,6 @@
 {
     class ControllerEventHandler 
     {
-        public bool isBinded() { return false; }
+        public bool IsBinded() { return false; }
     }
 }

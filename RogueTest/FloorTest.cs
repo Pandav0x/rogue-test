@@ -11,7 +11,7 @@ namespace RogueTest
     {       
         public static void FloorGenTest()
         {
-
+            Console.WriteLine("Passing by FloorTest class here !");
             return;
         }
     }

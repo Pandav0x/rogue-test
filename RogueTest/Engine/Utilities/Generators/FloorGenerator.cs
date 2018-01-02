@@ -47,7 +47,7 @@ namespace RogueTest.Engine.Utilities.Generators
                 float randomPerc = ((float)i) / (((float)this._roomNumber - 1));
                 randomCompare = Lerp.LerpThatAss(randomCompareStart, randomCompareEnd, randomPerc);
                 checkPos = NewPosistion();
-
+                 
                 if (NeighborsNum(checkPos, _takenPositions) > 1 && xRandom.GetRandomNumber() > randomCompare)
                 {
                     int ite = 0;

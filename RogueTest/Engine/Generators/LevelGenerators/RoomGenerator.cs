@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RogueTest.Engine.GameContent.Level;
 
-namespace RogueTest.Engine.Utilities.Generators
+namespace RogueTest.Engine.LevelGenerators.Generators
 {
     class RoomGenerator
     {

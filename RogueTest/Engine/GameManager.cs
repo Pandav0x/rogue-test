@@ -2,6 +2,7 @@
 using RogueTest.Engine.Utilities.Display;
 using RogueTest.Engine.Display;
 using RogueTest.Engine.Controls.Events;
+using RogueTest.Engine.Generators;
 
 namespace RogueTest.Engine
 {
@@ -10,6 +11,7 @@ namespace RogueTest.Engine
         public GameStatesManager gsm;
         public DisplayManager dm;
         public EventManager em;
+        public GeneratorsManager gm;
 
         public GameManager()
         {
@@ -18,6 +20,7 @@ namespace RogueTest.Engine
             this.dm = new DisplayManager(this);
             this.gsm = new GameStatesManager(this);
             this.em = new EventManager(this);
+            this.gm = new GeneratorsManager();
 
             return;
         }

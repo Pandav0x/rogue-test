@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenTK;
 using RogueTest.Engine.Utilities.Mathp;
-using RogueTest.Engine.Utilities.Generators;
+using RogueTest.Engine.Generators;
 
 namespace RogueTest.Engine.GameContent.Level
 {

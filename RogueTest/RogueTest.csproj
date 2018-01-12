@@ -75,12 +75,13 @@
     <Compile Include="Engine\Display\Container\Window.cs" />
     <Compile Include="Engine\GameContent\Level\Tile.cs" />
     <Compile Include="Engine\GameStates\GameStatesManager.cs" />
-    <Compile Include="Engine\Utilities\Generators\FloorGenerator.cs" />
-    <Compile Include="Engine\Utilities\Generators\RoomGenerator.cs" />
+    <Compile Include="Engine\Generators\LevelGenerators\FloorGenerator.cs" />
+    <Compile Include="Engine\Generators\GeneratorsManager.cs" />
+    <Compile Include="Engine\Generators\LevelGenerators\RoomGenerator.cs" />
     <Compile Include="Engine\Utilities\IO\TxtReader.cs" />
+    <Compile Include="Engine\Utilities\Mathp\Even.cs" />
     <Compile Include="Engine\Utilities\Mathp\Lerp.cs" />
     <Compile Include="Engine\Utilities\Mathp\xRandom.cs" />
-    <Compile Include="FloorTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Engine\GameStates\States\LevelState.cs" />

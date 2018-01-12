@@ -13,7 +13,7 @@ namespace RogueTest.Engine.Utilities.Mathp
 
         public static float GetRandomNumber()
         {
-            return xRandom.random.Next(0, 1);
+            return xRandom.random.Next(0, 100);
         }
 
         public static Vector2 GetRandomSize(int min, int max)

@@ -6,6 +6,7 @@ I will not detail all the code parts, but I will just give an overview of it.
 All those files are in the ~/Pulsee1 folder.
 
 **Controls**
+
 Handle all the control related code: physical device interpreter, key binding, event handler.
 
 **Display**

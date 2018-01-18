@@ -15,7 +15,7 @@ namespace Pulsee1.Display
 
         public DisplayManager(GameManager parent_)
         {
-            this.window = new Window();
+            this.window = new Window(this._parent);
             this.camera = new Camera();
             this._parent = parent_;
         }
@@ -35,7 +35,7 @@ namespace Pulsee1.Display
         internal void StartWindow()
         {
             this.ChangeWindowName("GUI Window");
-            this.window.Run_More(this.clockTime, this._parent);
+            this.window.Run_More(this.clockTime);
             return;
         }
     }

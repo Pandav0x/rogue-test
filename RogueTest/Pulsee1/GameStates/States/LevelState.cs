@@ -15,7 +15,7 @@ namespace Pulsee1.GameStates.States
 
         protected override void Content(params dynamic[] args)
         {
-            xConsole.WriteLine("LevelState Started", ConsoleColor.Yellow);
+            xConsole.WriteLine("LevelState Started");
 
             this._map = Enumerable.Range(0, _floorNumber).Select(i => new Floor()).ToArray();
             for (int i = 0; i < _floorNumber; i++)

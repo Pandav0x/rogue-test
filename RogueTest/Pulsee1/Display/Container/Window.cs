@@ -1,14 +1,36 @@
 ﻿using System;
 using OpenTK;
+using OpenTK.Graphics.OpenGL;
+using Pulsee1.Utilities.Display;
 using OpenTK.Graphics;
-using OpenTK.Graphics.ES20;
+using Pulsee1.Graphics.Textures;
 
 namespace Pulsee1.Display.Container
 {
     class Window : GameWindow
     {
-        private GameManager parent;
+        private GameManager _parent;
 
+        public Window(GameManager parent_) : base(854, 480, GraphicsMode.Default, "GUI Window", GameWindowFlags.Default, DisplayDevice.Default, 3, 0, GraphicsContextFlags.ForwardCompatible)
+        {
+            this._parent = parent_;
+
+            GLInit();
+
+            xConsole.WriteLine(new String('-', 30) + "\nOpenGL version: " + GL.GetString(StringName.Version) + "\n" + new String('-', 30));
+            return;
+        }
+
+        private void GLInit()
+        {
+            GL.Enable(EnableCap.Blend | EnableCap.DepthTest | EnableCap.Texture2D);
+
+            GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
+
+            GL.DepthFunc(DepthFunction.Lequal);
+        }
+
+#region Changing Stuff
         public void ChangeResolution(int width_, int height_)
         {
             Width = width_;
@@ -33,37 +55,42 @@ namespace Pulsee1.Display.Container
             VSync = (!on_)? VSyncMode.Off : VSyncMode.On;
             return;
         }
+#endregion
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
 
-            GL.ClearColor(Color4.Black);
-
             ChangeResolution(854, 480);
             ChangeVSync(false);
 
-            WindowBorder = WindowBorder.Fixed;
+            WindowBorder = WindowBorder.Resizable;
 
             return;
         }
+
+        protected override void OnUpdateFrame(FrameEventArgs e)
+        {
+            // this is called every frame, put game logic here
+        }
+
 
         protected override void OnRenderFrame(FrameEventArgs e)
         {
-            base.OnRenderFrame(e);
-
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
-            //display tiles here 
-
-            SwapBuffers();
+            this.SwapBuffers();
 
             return;
         }
 
-        public void Run_More(double clock_, GameManager game_)
+        protected override void OnResize(EventArgs e)
         {
-            this.parent = game_;
+            GL.Viewport(0, 0, this.Width, this.Height);
+        }
+
+        public void Run_More(double clock_)
+        {
             this.Run(clock_);
             return;
         }

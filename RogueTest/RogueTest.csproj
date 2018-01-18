@@ -13,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,7 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Pulsee1\Pictures\Ico\favicon.ico</ApplicationIcon>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="OpenTK, Version=2.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
@@ -78,6 +80,11 @@
     <Compile Include="Pulsee1\Generators\LevelGenerators\FloorGenerator.cs" />
     <Compile Include="Pulsee1\Generators\GeneratorsManager.cs" />
     <Compile Include="Pulsee1\Generators\LevelGenerators\RoomGenerator.cs" />
+    <Compile Include="Pulsee1\Graphics\GraphicsManager.cs" />
+    <Compile Include="Pulsee1\Graphics\Loader\GameTexLoader.cs" />
+    <Compile Include="Pulsee1\Graphics\Textures\Texture2D.cs" />
+    <Compile Include="Pulsee1\Graphics\Loader\TextureLoader.cs" />
+    <Compile Include="Pulsee1\Startup\Opening.cs" />
     <Compile Include="Pulsee1\Utilities\IO\TxtReader.cs" />
     <Compile Include="Pulsee1\Utilities\Mathp\Even.cs" />
     <Compile Include="Pulsee1\Utilities\Mathp\Lerp.cs" />
@@ -98,7 +105,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Pulsee1\Pictures\Ico\favicon.ico" />
+    <Content Include="favicon.ico" />
+    <None Include="Pulsee1\Pictures\Ico\favicon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Pulsee1\Pictures\Logos\poweredBy.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -21,9 +21,9 @@ namespace Pulsee1.Controls.Events
             this._parent = parent_;
             
             //Keyboard event binding (put in KeyboardEventHandler)
-            this._parent.dm.window.KeyUp += this.keh.Keh_KeyUp;
-            this._parent.dm.window.KeyPress += this.keh.Keh_KeyPress;
-            this._parent.dm.window.Keyboard.KeyDown += this.keh.Keh_KeyDown;
+            this._parent.dim.window.KeyUp += this.keh.Keh_KeyUp;
+            this._parent.dim.window.KeyPress += this.keh.Keh_KeyPress;
+            this._parent.dim.window.Keyboard.KeyDown += this.keh.Keh_KeyDown;
         }
     }
 }

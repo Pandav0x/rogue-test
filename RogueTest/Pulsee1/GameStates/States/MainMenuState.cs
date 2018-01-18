@@ -10,7 +10,7 @@ namespace Pulsee1.GameStates.States
 
         protected override void Content(params dynamic[] args)
         {
-            xConsole.WriteLine("Main menu started !", ConsoleColor.Yellow);
+            xConsole.WriteLine("Main menu started !");
             //base._Parent.gameStates["level"].Start();
             return;
         }

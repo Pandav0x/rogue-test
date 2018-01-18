@@ -16,7 +16,7 @@ namespace Pulsee1.GameStates
 
         public GameStatesManager(GameManager context)
         {
-            xConsole.WriteLine("Game States Loading...", ConsoleColor.Green);
+            xConsole.WriteLine("Game States Loading...");
             this.gameStates.Add("mainMenu", new GameStates.States.MainMenuState(context));
             this.gameStates.Add("lose", new GameStates.States.LoseState(context));
             this.gameStates.Add("win", new GameStates.States.WinState(context));
@@ -25,7 +25,7 @@ namespace Pulsee1.GameStates
 
         public void StartFirstState()
         {
-            xConsole.WriteLine("Launching first state -> " + this.firstStateToLoad, ConsoleColor.DarkMagenta);
+            xConsole.WriteLine("Launching first state -> " + this.firstStateToLoad);
             this.gameStates[firstStateToLoad].Start();
         }
     }

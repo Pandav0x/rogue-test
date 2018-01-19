@@ -1,10 +1,10 @@
-﻿using Pulsee1.Startup;
-using Pulsee1.GameStates;
+﻿using Pulsee1.KernelContent.Startup;
+using Pulsee1.Game.GameStates;
 using Pulsee1.Utilities.Display;
 using Pulsee1.Display;
 using Pulsee1.Controls.Events;
-using Pulsee1.Generators;
-using Pulsee1.Graphics;
+using Pulsee1.Game.Generators;
+using Pulsee1.Display.Graphics;
 
 namespace Pulsee1
 {

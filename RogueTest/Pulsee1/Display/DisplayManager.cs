@@ -1,6 +1,6 @@
 ﻿using System;
-using Pulsee1.Display.Container;
-using Pulsee1.Display.Content;
+using Pulsee1.Display.GUI;
+using Pulsee1.Display.VirtualDevice;
 
 namespace Pulsee1.Display
 {

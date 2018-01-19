@@ -7,21 +7,11 @@ All those files are in the ~/Pulsee1 folder.
 
 **Controls**: Handle all the control related code: physical device interpreter, key binding, event handler.
 
-**Display**: Handle all the GUI related code: container(Window class/resolution) and the camera (inside Window).
+**Display**: Handle all the GUI + graphics related code: container(Window class/resolution) and the camera (inside Window).
 
-**GameContent**: Contains all the game objects: Rooms/Floors and MOBS as Characters(Player/Enemies).
+**Game**: Contains all the game content: states / generators / MOBS etc.
 
-**GameStates**: Contains all the game states (level/lose/mainMenu/win).
-Technically all the gameplay will be in here.
-
-**Generators**: Contain all the generators needed for a Rogue-like game (such as a floor generator etc).
-May include more Generators in the future.
-
-**Graphics**: Handle all the graphics from the Texture2D class (which ultimately is just a struct with 2 constructors) to the TextureLoader from a picture.
-
-**Pictures**: Contains all the pictures used by the engine itself and not the game (eg. window icon, startup picture, etc...).
-
-**Startup**: Contains the Opening class which is the solution I have to 'display' the startup picture (will be removed in further versions).
+**KernelContent**: Contains all the pictures and screens used by the engine itself.
 
 **Utilities**: A bunch of useful classes to display in the console with colors, generate a random integer, use LERP, check if number is even, easy text file reader and so on...
 

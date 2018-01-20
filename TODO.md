@@ -4,6 +4,7 @@ You can just forget this file.
 
 ## ASAP
 Create Managers class for all folders (as it was just rearranged)
++ Delete OpenGL references in the texture loader
 
 ## Peripherals
 Make the customs objets for the mouse/keyboard and luckilly controller.

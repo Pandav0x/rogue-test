@@ -1,9 +1,6 @@
 ﻿using System;
 using OpenTK;
-using OpenTK.Graphics.OpenGL;
-using Pulsee1.Utilities.Display;
 using OpenTK.Graphics;
-using Pulsee1.Display.Graphics.Textures;
 
 namespace Pulsee1.Display.GUI
 {
@@ -15,19 +12,7 @@ namespace Pulsee1.Display.GUI
         {
             this._parent = parent_;
 
-            GLInit();
-
-            xConsole.WriteLine(new String('-', 30) + "\nOpenGL version: " + GL.GetString(StringName.Version) + "\n" + new String('-', 30));
             return;
-        }
-
-        private void GLInit()
-        {
-            GL.Enable(EnableCap.Blend | EnableCap.DepthTest | EnableCap.Texture2D);
-
-            GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
-
-            GL.DepthFunc(DepthFunction.Lequal);
         }
 
 #region Changing Stuff
@@ -77,7 +62,7 @@ namespace Pulsee1.Display.GUI
 
         protected override void OnRenderFrame(FrameEventArgs e)
         {
-            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+            
 
             this.SwapBuffers();
 
@@ -86,7 +71,7 @@ namespace Pulsee1.Display.GUI
 
         protected override void OnResize(EventArgs e)
         {
-            GL.Viewport(0, 0, this.Width, this.Height);
+            return;
         }
 
         public void Run_More(double clock_)

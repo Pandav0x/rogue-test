@@ -25,19 +25,29 @@ Folder | What it is
 ## FAQ
 
 Q: Is a FAQ needed for this project ?
+
 A: No.
 
+
 Q: Why are you doing this ?
+
 A: Because I want to.
 
+
 Q: You know that this whole project is really messy ?
+
 A: Yes, that's the sole purpose of it.
 
+
 Q: Can I use what you made so far ?
+
 A: Yup.
 
+
 Q: Why did you gave names to the build versions ?
+
 A: I like it.
+
 
 ## Infos
 I know that this is maybe the messiest code you ever read, but I do...  not care for the moment AND it is actually changing while developing (planning is soooo overrated). :zzz:

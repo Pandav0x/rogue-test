@@ -1,5 +1,6 @@
 # RogueTest
 Just a test of a game framework using the OpenTK/OpenGL libraries.
+
 You can find the OpenTK project [here](https://github.com/opentk/opentk).
 
 ## Structure
@@ -15,4 +16,4 @@ Folder | What it is
 `Utilities` | A bunch of useful classes to display in the console with colors, generate a random integer, use LERP, check if number is even, easy text file reader and so on...
 
 ## Infos
-I know that this is maybe the messiest code you ever read, butI do...  not care for the moment AND it is actually changing while developing (planning is soooo overrated). :zzz:
+I know that this is maybe the messiest code you ever read, but I do...  not care for the moment AND it is actually changing while developing (planning is soooo overrated). :zzz:

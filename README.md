@@ -19,7 +19,7 @@ Folder | What it is
 `Controls` | Handle all the control related code: physical device interpreter, key binding, event handler.
 `Display` | Handle all the GUI + graphics related code: container(Window class/resolution) and the camera (inside Window).
 `Game` | Contains all the game content: states / generators / MOBS etc.
-`KernelContent` | Contains all the pictures and screens used by the engine itself.
+`KernelContent` | Contains all the pictures and states used by the engine itself.
 `Utilities` | A bunch of useful classes to display in the console with colors, generate a random integer, use LERP, check if number is even, easy text file reader and so on...
 
 ## FAQ

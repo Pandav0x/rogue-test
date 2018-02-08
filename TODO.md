@@ -7,7 +7,7 @@ Create Managers class for all folders (as it was just rearranged)
 + Delete OpenGL references in the texture loader
 
 ## Peripherals
-Make the customs objets for the mouse/keyboard and luckilly controller.
+Make the customs objets for the mouse/keyboard and, with a bit of luck, controller.
 
 ## GUI
 Make the bitmap display work

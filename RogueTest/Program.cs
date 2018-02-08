@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using Pulsee1.Utilities.Display;
-using Pulsee1.Utilities.Mathp;
-using OpenTK;
 using Pulsee1;
 
 namespace RogueTest
@@ -24,7 +22,7 @@ namespace RogueTest
             var handle = GetConsoleWindow();
             Console.Title = "Output only console (" + AppData.version + " - " + AppData.buildName + ")";
             xConsole.WriteLine(AppData.name + " - v" + AppData.version + " (build from " + AppData.buildDate + ")\n");
-            xConsole.Write("Initializing shit ...\n");
+            xConsole.Write("Initializing...\n");
             GameManager game = new GameManager();
             game.Run();
             //ShowWindow(handle, SW_HIDE); // technically hides the console window, but not quite lately... 

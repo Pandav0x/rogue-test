@@ -1,10 +1,8 @@
-﻿using Pulsee1.Display.Graphics.Loader;
+﻿using Pulsee1.Display.Graphics.GLOverlay;
+using Pulsee1.Display.Graphics.Loader;
 using Pulsee1.Display.Graphics.Textures;
-using System;
+using Pulsee1.Utilities.Display;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pulsee1.Display.Graphics
 {
@@ -19,6 +17,7 @@ namespace Pulsee1.Display.Graphics
         {
             this._parent = parent_;
             this._texLoader = new TextureLoader();
+            xConsole.WriteLine("OpenGL - " + PulseGL.GetGLVersion());
             return;
         }
 

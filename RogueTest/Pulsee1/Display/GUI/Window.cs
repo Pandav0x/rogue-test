@@ -47,7 +47,7 @@ namespace Pulsee1.Display.GUI
             base.OnLoad(e);
 
             ChangeResolution(854, 480);
-            ChangeVSync(false);
+            ChangeVSync(true);
 
             WindowBorder = WindowBorder.Resizable;
 
@@ -62,8 +62,6 @@ namespace Pulsee1.Display.GUI
 
         protected override void OnRenderFrame(FrameEventArgs e)
         {
-            
-
             this.SwapBuffers();
 
             return;

@@ -65,6 +65,7 @@
     <Compile Include="Pulsee1\Controls\Events\DeviceEventHandler\Keyboard\KeyboardEventHandler.cs" />
     <Compile Include="Pulsee1\Controls\Events\DeviceEventHandler\Mouse\MouseEventHandler.cs" />
     <Compile Include="Pulsee1\Controls\Events\EventManager.cs" />
+    <Compile Include="Pulsee1\Display\Graphics\GLOverlay\PulseGL.cs" />
     <Compile Include="Pulsee1\Display\GUI\Resolutions.cs" />
     <Compile Include="Pulsee1\Display\DisplayManager.cs" />
     <Compile Include="Pulsee1\Game\GameContent\Characters\Baddies\Baddy.cs" />
@@ -102,8 +103,12 @@
     <None Include="App.config" />
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
+    <None Include="Pulsee1\Resources\Manual.pdf" />
+    <None Include="Pulsee1\Resources\Manual2.pdf" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Pulsee1\Modeling\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
     <None Include="Pulsee1\KernelContent\Pictures\Icos\favicon.ico">

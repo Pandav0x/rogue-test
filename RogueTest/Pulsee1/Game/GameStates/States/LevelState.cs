@@ -2,7 +2,7 @@
 using System.Linq;
 using Pulsee1.Game.GameContent.Level;
 using Pulsee1.Game.GameStates.BaseState;
-using Pulsee1.Utilities.Display;
+using Pulsee1.Utils.Display;
 
 namespace Pulsee1.Game.GameStates.States
 {

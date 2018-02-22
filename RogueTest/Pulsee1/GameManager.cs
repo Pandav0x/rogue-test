@@ -1,8 +1,8 @@
 ﻿using Pulsee1.KernelContent.Startup;
 using Pulsee1.Game.GameStates;
-using Pulsee1.Utilities.Display;
-using Pulsee1.Display;
-using Pulsee1.Controls.Events;
+using Pulsee1.Utils.Display;
+using Pulsee1.Devices.Display;
+using Pulsee1.Devices.Controls.Events;
 using Pulsee1.Game.Generators;
 using Pulsee1.Display.Graphics;
 

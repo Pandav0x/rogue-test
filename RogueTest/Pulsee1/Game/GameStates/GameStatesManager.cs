@@ -1,5 +1,5 @@
 ﻿using Pulsee1.Game.GameStates.BaseState;
-using Pulsee1.Utilities.Display;
+using Pulsee1.Utils.Display;
 using System;
 using System.Collections.Generic;
 using System.Linq;

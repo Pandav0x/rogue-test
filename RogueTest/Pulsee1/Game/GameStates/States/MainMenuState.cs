@@ -1,6 +1,6 @@
 ﻿using System;
 using Pulsee1.Game.GameStates.BaseState;
-using Pulsee1.Utilities.Display;
+using Pulsee1.Utils.Display;
 
 namespace Pulsee1.Game.GameStates.States
 {

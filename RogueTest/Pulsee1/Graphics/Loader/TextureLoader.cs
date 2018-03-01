@@ -15,7 +15,7 @@ namespace Pulsee1.Graphics.Loader
         public Texture2D LoadTexture(string path)
         {
             if (!File.Exists(path))
-                throw new FileNotFoundException("File not fount:" + path);
+                throw new FileNotFoundException("File not found: " + path);
 
             Bitmap bitmap = new Bitmap(path, false);
             var bitmapRect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);

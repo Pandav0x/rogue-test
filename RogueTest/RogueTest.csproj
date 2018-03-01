@@ -77,7 +77,7 @@
     <Compile Include="Pulsee1\Game\GameContent\Characters\Player\Player.cs" />
     <Compile Include="Pulsee1\Game\GameContent\Level\Floor.cs" />
     <Compile Include="Pulsee1\Game\GameContent\Level\Room.cs" />
-    <Compile Include="Pulsee1\Devices\Display\Window\Window.cs" />
+    <Compile Include="Pulsee1\Devices\Display\Window\Context.cs" />
     <Compile Include="Pulsee1\Game\GameContent\Level\Tile.cs" />
     <Compile Include="Pulsee1\Game\GameStates\GameStatesManager.cs" />
     <Compile Include="Pulsee1\Game\Generators\LevelGenerators\FloorGenerator.cs" />
@@ -111,16 +111,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pulsee1\Modeling\" />
-    <Folder Include="Pulsee1\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
-    <None Include="Pulsee1\KernelContent\Pictures\Icos\favicon.ico">
+    <None Include="Pulsee1\KernelContent\Pictures\Icos\build.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <Content Include="Pulsee1\KernelContent\Pictures\Splash\splashscreen.png">
+    <Content Include="Pulsee1\KernelContent\Pictures\Icos\pulsee.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Pulsee1\KernelContent\Pictures\Splash\splashscreen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

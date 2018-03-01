@@ -4,23 +4,32 @@ using Pulsee1.Graphics.Loader;
 using System.Collections.Generic;
 using System.Drawing;
 using Pulsee1.Utils.Display;
+using System.Threading;
 
 namespace Pulsee1.Graphics
 {
     static class PulseGL
     {
-        private static GameManager _parent;
         private static TextureStore _texStore = new TextureStore();
         private static bool _isInitialized = false;
+        private static Devices.Display.Window.Context _context;
 
+        #region TODEL
         public static void LoadTemp(string path)
         {
             _texStore.LoadTex(path);
         }
+        #endregion
 
         public static void GLSetContext(GameManager parent_)
         {
-            _parent = parent_;
+            _context = parent_.dim.window;
+            return;
+        }
+
+        public static void ResetInit()
+        {
+            _isInitialized = false;
             return;
         }
 
@@ -38,17 +47,23 @@ namespace Pulsee1.Graphics
             GL.Enable(EnableCap.DepthTest);	
             GL.ShadeModel(ShadingModel.Smooth);
 
-            GL.MatrixMode(MatrixMode.Projection);
-            GL.LoadIdentity();
-
             GL.MatrixMode(MatrixMode.Modelview);
 
             return;
         }
 
+        public static void OnResize()
+        {
+            GL.Viewport(0, 0, _context.Width, _context.Height);
+            GL.MatrixMode(MatrixMode.Projection);
+            GL.LoadIdentity();
+            GL.Ortho(0, _context.Width, _context.Height, 0, -1, 0);
+            return;
+        }
+
         public static void GLDrawScene()
         {
-            GLInit();
+            GLInit();            
 
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             GL.LoadIdentity();
@@ -59,36 +74,13 @@ namespace Pulsee1.Graphics
 
             GL.Begin(PrimitiveType.Quads);
 
-                GL.TexCoord2(0, 0);GL.Vertex2(-1, 1);
-                GL.TexCoord2(1, 0);GL.Vertex2(1, 1);
-                GL.TexCoord2(1, 1);GL.Vertex2(1, -1);
-                GL.TexCoord2(0, 1);GL.Vertex2(-1, -1);
+            GL.TexCoord2(0, 0); GL.Vertex2(-1, 1);  //ul
+            GL.TexCoord2(1, 0); GL.Vertex2(1, 1);   //ur
+            GL.TexCoord2(1, 1); GL.Vertex2(1, -1);  //br
+            GL.TexCoord2(0, 1); GL.Vertex2(-1, -1); //bl
 
             GL.End();
-
-            return;
-        }
-
-        public static void GLDrawSplash(string splashPath)
-        {
-            GLInit();
-
-            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-            GL.LoadIdentity();
-
-            GL.BindTexture(TextureTarget.Texture2D, _texStore.texLoader.LoadTexture(splashPath).ID);
-
-            GL.Begin(PrimitiveType.Quads);
-
-            //GL.Color4(0, 0, 0, 0);
-            
-            GL.TexCoord2(0, 0); GL.Vertex2(-1, 1);
-            GL.TexCoord2(1, 0); GL.Vertex2(1, 1);
-            GL.TexCoord2(1, 1); GL.Vertex2(1, -1);
-            GL.TexCoord2(0, 1); GL.Vertex2(-1, -1);
-
-            GL.End();
-
+                
             return;
         }
 

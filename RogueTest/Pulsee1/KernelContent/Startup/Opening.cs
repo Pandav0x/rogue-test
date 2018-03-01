@@ -13,8 +13,8 @@ namespace Pulsee1.KernelContent.Startup
             if (_parent == null) //just in case y'know
                 _parent = parent_;
 
-            PulseGL.GLDrawSplash(_splashPath);
-
+            //PulseGL.GLDrawScene(_splashPath);
+            PulseGL.LoadTemp(_splashPath);
 
             return;
         }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Pulsee1.Devices.Display.Window
 {
@@ -49,5 +50,20 @@ namespace Pulsee1.Devices.Display.Window
             { 2560, 1440 },
         };
 
+        public static Dictionary<int, Tuple<int, int>> allResolution = new Dictionary<int, Tuple<int, int>>
+        {
+            { (int)ResolutionType.StdResolution, Tuple.Create(4, 3) },
+            { (int)ResolutionType.TVResolution, Tuple.Create(3, 2) },
+            { (int)ResolutionType.WsResolution, Tuple.Create(16, 10) },
+            { (int)ResolutionType.HDResolution, Tuple.Create(16, 9) }
+        };
+
+        public enum ResolutionType
+        {
+            StdResolution,
+            TVResolution,
+            WsResolution,
+            HDResolution
+        }
     }
 }

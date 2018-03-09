@@ -4,6 +4,8 @@ using OpenTK.Input;
 using Pulsee1.Devices.Controls.Binding;
 using Pulsee1.Utils.Display;
 
+using Pulsee1.Graphics;
+
 namespace Pulsee1.Devices.Controls.Events.DeviceHandler.Keyboard
 {
     class KeyboardEventHandler
@@ -37,6 +39,8 @@ namespace Pulsee1.Devices.Controls.Events.DeviceHandler.Keyboard
         {
             if (GetActionFromKey(e) == "pause")
                 _parent._parent.dim.window.Exit();
+            if (GetActionFromKey(e) == "right")
+                PulseGL.ResetTexLoaded();
             if (this.IsBinded(e))
                 Console.WriteLine("Binded - " + KeyBinding.keyboardBind[e.Key]);
             xConsole.WriteLine(e.Key.ToString()+" ", ConsoleColor.Red);

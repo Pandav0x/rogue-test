@@ -5,6 +5,7 @@ using Pulsee1.Devices.Display;
 using Pulsee1.Devices.Controls.Events;
 using Pulsee1.Game.Generators;
 using Pulsee1.Display.Graphics;
+using Pulsee1.Graphics;
 
 namespace Pulsee1
 {
@@ -25,6 +26,8 @@ namespace Pulsee1
             this.evm = new EventManager(this);
             this.gasm = new GameStatesManager(this);
             this.gem = new GeneratorsManager();
+
+            PulseGL.GLSetContext(this);
 
             return;
         }

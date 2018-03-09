@@ -21,7 +21,6 @@ namespace Pulsee1.Graphics.Loader
             return;
         }
 
-
         //load all the textures in content file using TextureLoader
         //by scaning the content of the res/textures folder (fi)
     }

@@ -10,13 +10,15 @@ namespace Pulsee1.Devices.Display.Window
     class Context : GameWindow
     {
         private GameManager _parent;
+        private Tuple<int, int> _actualResolution;
 
         public Context(GameManager parent_) 
-            : base(854, 480, GraphicsMode.Default, "GUI Window", 
-                  GameWindowFlags.Default, DisplayDevice.Default, 3, 0, 
+            : base(854, 480, GraphicsMode.Default, "GUI Window",
+                  GameWindowFlags.Default, DisplayDevice.Default, 3, 0,
                   GraphicsContextFlags.ForwardCompatible)
         {
             this._parent = parent_;
+            this._actualResolution = Resolutions.allResolution[(int)Resolutions.ResolutionType.StdResolution];
             ChangeIco(new System.Drawing.Icon(@"Pulsee1\KernelContent\Pictures\Icos\build.ico"));
 
             return;
@@ -59,7 +61,7 @@ namespace Pulsee1.Devices.Display.Window
         {
             base.OnLoad(e);
 
-            ChangeResolution(1280, 720);
+            ChangeResolution(640, Resolutions.HDResolution[640]);
             ChangeVSync(true);
             ChangeCursorVisible(true);
 
@@ -73,25 +75,17 @@ namespace Pulsee1.Devices.Display.Window
             // this is called every frame, put game logic here
         }
 
-
         protected override void OnRenderFrame(FrameEventArgs e)
         {
-            double min = 70, max = 0;
-            //Thread.Sleep(1000);
             this.SwapBuffers();
             PulseGL.GLDrawScene();
-            if (this.RenderFrequency < min)
-                min = Math.Round(this.RenderFrequency, 0);
-            if(this.RenderFrequency > max)
-                max = Math.Round(this.RenderFrequency,0);
-            this.ChangeTitle("GUI Window - " + Math.Round(Math.Ceiling(this.RenderFrequency), 0) + "FPS (min:" + min + "/max:" + max + ")"
-                + " ~~ " + Width + "x" + Height);
+            this.ChangeTitle("GUI Window - " + Math.Round(Math.Ceiling(this.RenderFrequency), 0) + " ~~ " + Width + "x" + Height);
             return;
         }
 
         protected override void OnResize(EventArgs e)
         {
-            //PulseGL.OnResize();
+            PulseGL.GLOnResize();
             return;
         }
 

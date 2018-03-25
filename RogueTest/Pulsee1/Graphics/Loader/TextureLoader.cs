@@ -44,8 +44,7 @@ namespace Pulsee1.Graphics.Loader
 
             xConsole.WriteLine("Texture: " + path + " loaded", MessageType.Info);
 
-            return new Texture2D(id, bitmap.Width, bitmap.Height);
-
+            return new Texture2D(id, bitmap.Width, bitmap.Height, 0.5f);
         }
     }
 }

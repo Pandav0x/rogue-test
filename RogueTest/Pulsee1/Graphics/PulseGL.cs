@@ -1,6 +1,7 @@
 ﻿using OpenTK.Graphics.OpenGL;
 using Pulsee1.Graphics.Textures;
 using Pulsee1.Graphics.Loader;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using Pulsee1.Utils.Display;
@@ -15,18 +16,26 @@ namespace Pulsee1.Graphics
         private static bool _isTexLoaded = false;
         private static Devices.Display.Window.Context _context;
 
-        #region TODEL
-        public static void LoadTemp(string path)
-        {
-            _texStore.LoadTex(path);
-        }
-        #endregion
-
+        /// <summary>
+        /// Get the context from the game manager
+        /// </summary>
+        /// <param name="parent_"></param>
         public static void GLSetContext(GameManager parent_)
         {
             _context = parent_.dim.window;
             xConsole.WriteLine("GL Context given: " + _context.WindowInfo);
             return;
+        }
+
+        /// <summary>
+        /// Load a single image
+        /// </summary>
+        /// <param name="path"></param>
+        public static void LoadSingle(string path)
+        {
+            xConsole.WriteLine("LoadSingle method", ConsoleColor.Red);
+            _texStore.LoadTex(path);
+            ResetTexLoaded(true); //cancel texture loading
         }
 
         /// <summary>
@@ -38,6 +47,8 @@ namespace Pulsee1.Graphics
 
             GL.Enable(EnableCap.Texture2D);
             GL.Enable(EnableCap.Blend);
+            GL.Enable(EnableCap.AlphaTest);
+            GL.AlphaFunc(AlphaFunction.Greater, 0.01f);
             GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
 
             GL.ClearColor(0.0f, 0.0f, 0.0f, 0.0f);
@@ -56,29 +67,42 @@ namespace Pulsee1.Graphics
         /// </summary>
         public static void GLLoadTex()
         {
-            if (_isTexLoaded) return;
+            if(_isTexLoaded) return;
 
             //TODO: DELETE ALL THE BINDED TEXTURES
 
-            for(int i = 0; i < _texStore.texLoaded.Count; i++)
-                GL.DeleteTexture(i);
+            for (int i = 0; i < _texStore.texLoaded.Count; i++)
+            {
+                GL.DeleteTexture(_texStore.texLoaded[i].ID);
+                xConsole.WriteLine("Tex Deleted: id-" + _texStore.texLoaded[i].ID.ToString(), ConsoleColor.Magenta);
+            }
 
             foreach (Texture2D t in _texStore.texLoaded)
+            {
                 GL.BindTexture(TextureTarget.Texture2D, t.ID);
+                GL.Color4(1, 1, 1, t.Alpha);
+            }
+
             _isTexLoaded = true;
 
             return;
         }
 
+        /// <summary>
+        /// Reset the initialization of OpenGL
+        /// </summary>
         public static void ResetGLInit()
         {
             _isInitialized = false;
             return;
         }
 
-        public static void ResetTexLoaded()
+        /// <summary>
+        /// Reset the textures loaded
+        /// </summary>
+        public static void ResetTexLoaded(bool areTexLoaded_ = false)
         {
-            _isTexLoaded = false;
+            _isTexLoaded = areTexLoaded_;
             return;
         }
 
@@ -94,6 +118,9 @@ namespace Pulsee1.Graphics
             return;
         }
 
+        /// <summary>
+        /// Display the current scene (currently a single picture)
+        /// </summary>
         public static void GLDrawScene()
         {
             GLInit();
@@ -114,14 +141,30 @@ namespace Pulsee1.Graphics
             return;
         }
 
+        /// <summary>
+        /// Clear the OpenGL buffers
+        /// </summary>
+        public static void ClearBuffers()
+        {
+            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+        }
+
+        /// <summary>
+        /// Return the OpenGL version as string
+        /// </summary>
+        /// <returns></returns>
         public static string GetGLVersion()
         {
             return GL.GetString(StringName.Version) + " (" + GL.GetString(StringName.Renderer)+ ")";
         }
 
-        public static void ClearBuffers()
+        /// <summary>
+        /// Return the graphic card (detected by OpenGL) manufacturer
+        /// </summary>
+        /// <returns></returns>
+        public static string GetGLHardwareManufacturer()
         {
-            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+            return GL.GetString(StringName.Vendor);
         }
     }
 }

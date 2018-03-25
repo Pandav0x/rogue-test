@@ -55,6 +55,12 @@ namespace Pulsee1.Devices.Display.Window
             CursorVisible = on_;
             return;
         }
+
+        public void ChangeResizable(bool on_)
+        {
+
+            return;
+        }
         #endregion
 
         protected override void OnLoad(EventArgs e)
@@ -79,14 +85,44 @@ namespace Pulsee1.Devices.Display.Window
         {
             this.SwapBuffers();
             PulseGL.GLDrawScene();
+
             this.ChangeTitle("GUI Window - " + Math.Round(Math.Ceiling(this.RenderFrequency), 0) + " ~~ " + Width + "x" + Height);
             return;
         }
 
         protected override void OnResize(EventArgs e)
         {
+            #region fuck it
+            /**
+             * Trying to maintain the size ratio when the window is resized
+             * 
+             * WHAT IF JUST REMOVE THAT FEATURE ? JUST MAKE IT NON RESIZABLE AND ALL WILL BE FINE
+             * jesus !
+             * 
+             * */
+
+            /*
+            if (this.Width > this.oldWidth || this.Width < this.oldWidth)
+            {
+                this.Height = (int)Math.Ceiling((double) this.Width * 
+                    (this.Height / this._actualResolution.Item1));
+            }
+                
+            if (this.Height > this.oldHeight)
+            {
+                this.Width = (int)Math.Floor((double) this.Height *
+                    (this._actualResolution.Item1 / this._actualResolution.Item2));
+            }*/
+            #endregion
+
             PulseGL.GLOnResize();
             return;
+        }
+
+        protected override void OnDisposed(EventArgs e)
+        {
+            Console.ReadLine();
+            base.OnDisposed(e);
         }
 
         public void Run_More(double clock_)

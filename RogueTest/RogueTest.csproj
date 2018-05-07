@@ -36,7 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <ApplicationIcon>pulsee.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="OpenTK, Version=2.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
@@ -56,15 +56,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pulsee1\AppData.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Binding\GamePadButton.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Binding\KeyBinding.cs" />
-    <Compile Include="Pulsee1\Devices\Controls\Peripherals\S_Controller.cs" />
-    <Compile Include="Pulsee1\Devices\Controls\Peripherals\S_Keyboard.cs" />
-    <Compile Include="Pulsee1\Devices\Controls\Peripherals\S_Mouse.cs" />
-    <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Controller\ControllerEventHandler.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Args\GamePad\GamePadButtonEventArgs.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Args\GamePad\GamePadStickEventArgs.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Args\GamePad\GamePadTriggerEventArgs.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Peripherals\Ple_GamePad.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Peripherals\Ple_Keyboard.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Peripherals\Ple_Mouse.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\GamePad\GamePadEventHandler.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\IDeviceHandler.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Keyboard\KeyboardEventHandler.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Mouse\MouseEventHandler.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Events\EventManager.cs" />
+    <Compile Include="Pulsee1\Devices\Display\Window\Ple_GameWindow.cs" />
     <Compile Include="Pulsee1\Graphics\PulseGL.cs" />
     <Compile Include="Pulsee1\Graphics\Shaders\Shader.cs" />
     <Compile Include="Pulsee1\Graphics\Shaders\ShaderProgram.cs" />
@@ -88,7 +93,9 @@
     <Compile Include="Pulsee1\Graphics\Textures\Texture2D.cs" />
     <Compile Include="Pulsee1\Graphics\Loader\TextureLoader.cs" />
     <Compile Include="Pulsee1\KernelContent\Startup\Opening.cs" />
+    <Compile Include="Pulsee1\Utils\IO\DirManagement.cs" />
     <Compile Include="Pulsee1\Utils\IO\TxtReader.cs" />
+    <Compile Include="Pulsee1\Utils\IO\xPath.cs" />
     <Compile Include="Pulsee1\Utils\Mathp\Lerp.cs" />
     <Compile Include="Pulsee1\Utils\Mathp\xRandom.cs" />
     <Compile Include="Program.cs" />
@@ -114,10 +121,10 @@
     <Folder Include="Pulsee1\Modeling\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="favicon.ico" />
     <None Include="Pulsee1\KernelContent\Pictures\Icos\build.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Content Include="pulsee.ico" />
     <Content Include="Pulsee1\KernelContent\Pictures\Icos\pulsee.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

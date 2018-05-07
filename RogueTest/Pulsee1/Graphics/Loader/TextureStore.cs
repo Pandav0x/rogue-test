@@ -1,4 +1,6 @@
-﻿using Pulsee1.Graphics.Textures;
+﻿using Pulsee1.Utils.IO;
+using Pulsee1.Graphics.Textures;
+using Pulsee1.Utils.Display;
 using System.Collections.Generic;
 
 namespace Pulsee1.Graphics.Loader
@@ -12,12 +14,21 @@ namespace Pulsee1.Graphics.Loader
         {
             this.texLoader = new TextureLoader();
             this.texLoaded = new List<Texture2D>();
+            xConsole.Write(AppData.AssetsLocation());
             return;
         }
 
-        public void LoadTex(string path)
+        public void LoadSingleTex(string path)
         {
             texLoaded.Add(texLoader.LoadTexture(path));
+            return;
+        }
+
+        public void LoadAllTex()
+        {
+            foreach (string file in DirManagement.GetAllFiles(AppData.AssetsLocation()))
+                texLoaded.Add(texLoader.LoadTexture(AppData.AssetsLocation() + file));
+
             return;
         }
 

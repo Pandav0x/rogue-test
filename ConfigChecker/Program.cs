@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Installer
+namespace GamePadDetector
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Installer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+            Application.Run(new MainForm());
         }
     }
 }

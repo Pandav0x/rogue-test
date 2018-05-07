@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using OpenTK.Input;
 
 namespace Pulsee1.Devices.Controls.Binding
@@ -17,12 +13,14 @@ namespace Pulsee1.Devices.Controls.Binding
             { Key.D , "right"}
         };
 
-        public static Dictionary<Key, string> mouseBind = new Dictionary<Key, string> {
-            { Key.Escape, "pause" }
+        public static Dictionary<MouseButton, string> mouseBind = new Dictionary<MouseButton, string> {
+            { MouseButton.Left, "LMB"},
+            { MouseButton.Right, "RMB"},
+            { MouseButton.Middle, "MMB"}
         };
 
-        public static Dictionary<Key, string> controllerBind = new Dictionary<Key, string> {
-            { Key.Escape, "pause" }
+        public static Dictionary<GamePadButton, string> gamePadBind = new Dictionary<GamePadButton, string> {
+            { GamePadButton.Start, "pause" }
         };
 
         public enum DeviceType

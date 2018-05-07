@@ -2,12 +2,11 @@
 using OpenTK;
 using OpenTK.Graphics;
 using Pulsee1.Graphics;
-using System.Threading;
-using Pulsee1.Utils.Display;
+using RogueTest.Pulsee1.Devices.Display.Window;
 
 namespace Pulsee1.Devices.Display.Window
 {
-    class Context : GameWindow
+    class Context : Ple_GameWindow
     {
         private GameManager _parent;
         private Tuple<int, int> _actualResolution;
@@ -63,6 +62,8 @@ namespace Pulsee1.Devices.Display.Window
         }
         #endregion
 
+        #region Window Events
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -92,7 +93,7 @@ namespace Pulsee1.Devices.Display.Window
 
         protected override void OnResize(EventArgs e)
         {
-            #region fuck it
+            #region Trying to maintain the ratio (but whatever)
             /**
              * Trying to maintain the size ratio when the window is resized
              * 
@@ -125,10 +126,14 @@ namespace Pulsee1.Devices.Display.Window
             base.OnDisposed(e);
         }
 
+        #endregion
+
+
         public void Run_More(double clock_)
         {
             this.Run(clock_);
             return;
         }
+
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Pulsee1.Devices.Controls.Peripherals
 {
-    class S_Controller
+    class Ple_Mouse
     {
     }
 }

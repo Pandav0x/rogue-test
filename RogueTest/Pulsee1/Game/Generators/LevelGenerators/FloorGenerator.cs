@@ -19,7 +19,7 @@ namespace Pulsee1.Game.LevelGenerators.Generators
 
         public FloorGenerator()
         {
-            xConsole.WriteLine("Warining : if used, this instance will throw an error (FloorGenerator)", MessageType.Warning);
+            xConsole.WarningInstanceUnstable(this);
             return;
         }
 

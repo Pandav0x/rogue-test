@@ -49,6 +49,11 @@ namespace Pulsee1.Utils.Display
             return;
         }
 
+        public static void WarningInstanceUnstable(object sender)
+        {
+            xConsole.WriteLine("Warining : if used, this instance will throw an error (" + sender.GetType().ToString() + ")", MessageType.Warning);
+        }
+
         private static ConsoleColor ColorMessageType(MessageType mt)
         {
             switch (mt)

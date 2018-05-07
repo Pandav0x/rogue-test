@@ -34,7 +34,7 @@ namespace Pulsee1.Graphics
         public static void LoadSingle(string path)
         {
             xConsole.WriteLine("LoadSingle method", ConsoleColor.Red);
-            _texStore.LoadTex(path);
+            _texStore.LoadSingleTex(path);
             ResetTexLoaded(true); //cancel texture loading
         }
 

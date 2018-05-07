@@ -3,7 +3,6 @@ using OpenTK;
 using OpenTK.Input;
 using Pulsee1.Devices.Controls.Binding;
 using Pulsee1.Utils.Display;
-
 using Pulsee1.Graphics;
 
 namespace Pulsee1.Devices.Controls.Events.DeviceHandler.Keyboard
@@ -22,12 +21,12 @@ namespace Pulsee1.Devices.Controls.Events.DeviceHandler.Keyboard
         {
             return KeyBinding.keyboardBind.TryGetValue(e.Key, out string a);
         }
-        
-        public void ExtendedEvent()
-        {
-            return;
-        }
 
+        /// <summary>
+        /// Check if there is an action binded for the key from the event given
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns></returns>
         private string GetActionFromKey(KeyboardKeyEventArgs e)
         {
             if (KeyBinding.keyboardBind.ContainsKey(e.Key))
@@ -35,6 +34,13 @@ namespace Pulsee1.Devices.Controls.Events.DeviceHandler.Keyboard
             return "";
         }
 
+        #region Events Handling
+
+        /// <summary>
+        /// Bind Keys for the keyboard
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void Keh_KeyDown(object sender, KeyboardKeyEventArgs e)
         {
             if (GetActionFromKey(e) == "pause")
@@ -42,7 +48,7 @@ namespace Pulsee1.Devices.Controls.Events.DeviceHandler.Keyboard
             if (GetActionFromKey(e) == "right")
                 PulseGL.ResetTexLoaded();
             if (this.IsBinded(e))
-                Console.WriteLine("Binded - " + KeyBinding.keyboardBind[e.Key]);
+                xConsole.WriteLine("Binded - " + KeyBinding.keyboardBind[e.Key]);
             xConsole.WriteLine(e.Key.ToString()+" ", ConsoleColor.Red);
             return;
         }
@@ -56,5 +62,7 @@ namespace Pulsee1.Devices.Controls.Events.DeviceHandler.Keyboard
         {
             return;
         }
+
+        #endregion
     }
 }

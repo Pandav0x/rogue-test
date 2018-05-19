@@ -61,9 +61,10 @@
     <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Args\GamePad\GamePadButtonEventArgs.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Args\GamePad\GamePadStickEventArgs.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Args\GamePad\GamePadTriggerEventArgs.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Peripherals\GamepadDevice.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Peripherals\GamepadListener.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Peripherals\GamepadStateWeighted.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Peripherals\Ple_GamePad.cs" />
-    <Compile Include="Pulsee1\Devices\Controls\Peripherals\Ple_Keyboard.cs" />
-    <Compile Include="Pulsee1\Devices\Controls\Peripherals\Ple_Mouse.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\GamePad\GamePadEventHandler.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\IDeviceHandler.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Keyboard\KeyboardEventHandler.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Pulsee1\Utils\IO\TxtReader.cs" />
     <Compile Include="Pulsee1\Utils\IO\xPath.cs" />
     <Compile Include="Pulsee1\Utils\Mathp\Lerp.cs" />
+    <Compile Include="Pulsee1\Utils\Mathp\xMath.cs" />
     <Compile Include="Pulsee1\Utils\Mathp\xRandom.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

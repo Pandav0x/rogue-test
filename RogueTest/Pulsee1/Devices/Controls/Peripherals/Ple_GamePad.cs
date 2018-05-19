@@ -1,48 +1,86 @@
 ﻿using System;
 using OpenTK.Input;
+using Pulsee1.Devices.Controls.Binding;
+using Pulsee1.Devices.Controls.Events.DeviceEventHandler.Args.GamePad;
 using Pulsee1.Utils.Display;
 
 namespace Pulsee1.Devices.Controls.Peripherals
 {
-    class Ple_GamePad
+    class Ple_GamePad : IInputDevice
     {
-        private static Ple_GamePad _instance;
+        private bool[] _buttons = new bool[Enum.GetValues(typeof(GamePadButtons)).Length];
+        private string _description;
+        private int _numButtons;
+        private IntPtr _devID;
+        private bool _repeat;
+        private GamePadButtonEventArgs bArgs = new GamePadButtonEventArgs();
 
-        private Ple_GamePad()
-        {
-            return;
-        }
+        #region contructors
 
-        public static Ple_GamePad GetInstance()
-        {
-            if (Ple_GamePad._instance == null)
-                Ple_GamePad._instance = new Ple_GamePad();
-            return Ple_GamePad._instance;
-        }
+        internal Ple_GamePad() { return; }
 
-
-        #region TODEL
-        public static void tmp_Main()
-        {
-            xConsole.WriteLine(new String('-', 40), System.ConsoleColor.Green);
-
-            for(int i = 0;; i++)
-            {
-                if (!GamePad.GetState(i).IsConnected)
-                    break;
-                xConsole.WriteLine(i + ": " + GamePad.GetName(i), System.ConsoleColor.Green);
-                xConsole.WriteLine("\tIs plugged: " + GamePad.GetState(i).IsConnected.ToString(), System.ConsoleColor.Green);
-
-                GamePadCapabilities kappa = GamePad.GetCapabilities(i);
-
-                xConsole.WriteLine("\t" + kappa.GamePadType.ToString(), System.ConsoleColor.Green);
- 
-            }
-
-            xConsole.WriteLine(new String('-', 40), System.ConsoleColor.Green);
-            return;
-        }
         #endregion
+
+        public bool this[GamePadButton button]
+        {
+            get { return _buttons[(int)button]; }
+            internal set
+            {
+                if (_buttons[(int)button] != value)
+                {
+                    _buttons[(int)button] = value;
+
+                    if (value && ButtonDown != null)
+                    {
+                        bArgs.Button = button;
+                        ButtonDown(this, bArgs);
+                    }
+                    else if (!value && ButtonUp != null)
+                    {
+                        bArgs.Button = button;
+                        ButtonUp(this, bArgs);
+                    }
+                }
+            }
+        }
+
+        public int NumberOfButtons
+        {
+            get { return _numButtons; }
+            internal set { _numButtons = value; }
+        }
+
+        public IntPtr DeviceID
+        {
+            get { return _devID; }
+            internal set { _devID = value; }
+        }
+        
+        public event EventHandler<GamePadButtonEventArgs> ButtonDown;
+        public event EventHandler<GamePadButtonEventArgs> ButtonUp;
+
+        #region IInputDevice Members
+
+        public string Description
+        {
+            get { return _description; }
+            internal set { _description = value; }
+        }
+
+        public InputDeviceType DeviceType
+        {
+            get { return InputDeviceType.Hid; }
+        }
+
+        #endregion
+
+        internal void ClearButtons()
+        {
+            for (int i = 0; i < _buttons.Length; i++)
+                if (this[(GamePadButton)i])
+                    this[(GamePadButton)i] = false;
+            return;
+        }
 
     }
 }

@@ -1,11 +1,11 @@
 ﻿using System;
-using OpenTK.Input;
+using Pulsee1.Devices.Controls.Binding;
 
 namespace Pulsee1.Devices.Controls.Events.DeviceEventHandler.Args.GamePad
 {
     class GamePadButtonEventArgs : EventArgs
     {
-        public GamePadButtons Button { get; internal set; }
+        public GamePadButton Button { get; internal set; }
 
         public GamePadButtonEventArgs() { return; }
 

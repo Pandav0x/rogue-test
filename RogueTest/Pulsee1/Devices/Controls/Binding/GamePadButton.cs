@@ -1,7 +1,8 @@
 ﻿namespace Pulsee1.Devices.Controls.Binding
 {
-    enum GamePadButton
+    public enum GamePadButton : int
     {
+        Unknown = 0,
         A,
         B,
         X,

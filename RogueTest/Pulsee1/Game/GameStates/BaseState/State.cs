@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Pulsee1;
-
-namespace Pulsee1.Game.GameStates.BaseState
+﻿namespace Pulsee1.Game.GameStates.BaseState
 {
 
     class State : IStateEnum
     {
         private GameManager _parent;
 
-        public GameManager _Parent
+        public GameManager Parent
         {
             get { return _parent; }
             set { _parent = value; }

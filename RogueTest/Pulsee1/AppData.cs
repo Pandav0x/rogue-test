@@ -8,7 +8,7 @@ namespace Pulsee1
         public static string name = "P.U.L.S.E-Engine";
         public static string nameFull = "Panda Unlimited Low Spec Experience Engine";
 
-        public static string version = "0.1.1";
+        public static string version = "0.1.2";
 
         public static string buildName = "El Bridget";
 

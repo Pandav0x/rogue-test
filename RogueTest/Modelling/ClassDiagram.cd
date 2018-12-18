@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="RogueTest.Program" Collapsed="true">
+    <Position X="6.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAABABgEAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.GameManager">
+    <Position X="8" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACAAAAAAAAAAQAAAIAAAAAAACAAAAAAAAAI=</HashCode>
+      <FileName>Pulsee1\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.AppData" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIACAAAAAAAAAAAABAAQAAAgIEAAAAAAAABAAAQAA=</HashCode>
+      <FileName>Pulsee1\AppData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Devices.Controls.Binding.KeyBinding" Collapsed="true">
+    <Position X="18.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAACAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Devices\Controls\Binding\KeyBinding.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Devices.Controls.Events.DeviceHandler.Controller.ControllerEventHandler" Collapsed="true">
+    <Position X="15.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Devices\Controls\Events\DeviceEventHandler\Controller\ControllerEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Devices.Controls.Events.DeviceHandler.Keyboard.KeyboardEventHandler" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgEAAAAAAAEAAAAgAAAAAQAAAEAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Pulsee1\Devices\Controls\Events\DeviceEventHandler\Keyboard\KeyboardEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Devices.Controls.Events.DeviceHandler.Mouse.MouseEventHandler" Collapsed="true">
+    <Position X="13.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Devices\Controls\Events\DeviceEventHandler\Mouse\MouseEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Devices.Controls.Events.EventManager" Collapsed="true">
+    <Position X="18.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEBQAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Devices\Controls\Events\EventManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Devices.Controls.Peripherals.S_Controller" Collapsed="true">
+    <Position X="13.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Devices\Controls\Peripherals\S_Controller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Devices.Controls.Peripherals.S_Keyboard" Collapsed="true">
+    <Position X="15.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Devices\Controls\Peripherals\S_Keyboard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Devices.Controls.Peripherals.S_Mouse" Collapsed="true">
+    <Position X="17" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Devices\Controls\Peripherals\S_Mouse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Devices.Display.DisplayManager" Collapsed="true">
+    <Position X="17" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAQBAAAAAAIAAACAAgAgAA=</HashCode>
+      <FileName>Pulsee1\Devices\Display\DisplayManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Devices.Display.VirtualDevice.Camera" Collapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAIAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Devices\Display\VirtualDevice\Camera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Devices.Display.Window.Context">
+    <Position X="20.5" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAABgAAAAAACAAQAQACAAAASAAIAACQAAAAEAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Devices\Display\Window\Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Devices.Display.Window.Resolutions">
+    <Position X="18.75" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Pulsee1.Devices.Display.Window.Resolutions.ResolutionType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Pulsee1\Devices\Display\Window\Resolutions.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAEABAAAAAAAAAAAKAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Devices\Display\Window\Resolutions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Game.GameContent.Characters.Baddies.Baddy" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Game\GameContent\Characters\Baddies\Baddy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Game.GameContent.Characters.Character" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUAAIAAAAIAAAAQAAAEIAAAQAAAAAEEAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Game\GameContent\Characters\Character.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Game.GameContent.Characters.Player.Player" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Game\GameContent\Characters\Player\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Game.GameContent.Level.Floor" Collapsed="true">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Pulsee1.Game.GameContent.Level.Floor.FloorTypes" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Pulsee1\Game\GameContent\Level\Floor.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Game\GameContent\Level\Floor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Game.GameContent.Level.Room" Collapsed="true">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgBAAAAAIAAAAAAAAAAEAiAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Game\GameContent\Level\Room.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Game.GameContent.Level.Tile" Collapsed="true">
+    <Position X="17" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAACAYAIAECAAIAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Game\GameContent\Level\Tile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Game.GameStates.BaseState.State" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAAQAAAAAAAAAQAAAAAAAAIAAAAAAQAAA=</HashCode>
+      <FileName>Pulsee1\Game\GameStates\BaseState\State.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Pulsee1.Game.GameStates.GameStatesManager" Collapsed="true">
+    <Position X="13.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAQAAAAAAAgAAA=</HashCode>
+      <FileName>Pulsee1\Game\GameStates\GameStatesManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Game.GameStates.States.LevelState" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAIAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Game\GameStates\States\LevelState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Game.GameStates.States.LoseState" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Game\GameStates\States\LoseState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Game.GameStates.States.MainMenuState" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Game\GameStates\States\MainMenuState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Game.GameStates.States.WinState" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Game\GameStates\States\WinState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Game.Generators.GeneratorsManager" Collapsed="true">
+    <Position X="15.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Game\Generators\GeneratorsManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Game.LevelGenerators.Generators.FloorGenerator" Collapsed="true">
+    <Position X="11.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAABAAAAQAAAAAAAAgAIgAAAAhAABAA=</HashCode>
+      <FileName>Pulsee1\Game\Generators\LevelGenerators\FloorGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Game.LevelGenerators.Generators.RoomGenerator" Collapsed="true">
+    <Position X="11.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Game\Generators\LevelGenerators\RoomGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Display.Graphics.GraphicsManager" Collapsed="true">
+    <Position X="17" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAEAAAAQAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Graphics\GraphicsManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Graphics.Loader.TextureLoader" Collapsed="true">
+    <Position X="13.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Graphics\Loader\TextureLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Graphics.Loader.TextureStore" Collapsed="true">
+    <Position X="15.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Graphics\Loader\TextureStore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Graphics.PulseGL">
+    <Position X="17" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAIFAAQACAgEBAAAAAEBAAAAAAABAAAAEA=</HashCode>
+      <FileName>Pulsee1\Graphics\PulseGL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Display.Graphics.GLOverlay.Shaders.Shader" Collapsed="true">
+    <Position X="18.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Graphics\Shaders\Shader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Display.Graphics.GLOverlay.Shaders.ShaderProgram" Collapsed="true">
+    <Position X="10" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAACAAAAAAEAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Graphics\Shaders\ShaderProgram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Graphics.Textures.Texture2D" Collapsed="true">
+    <Position X="11.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABACAgAAEAABAAEAAABAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Graphics\Textures\Texture2D.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.KernelContent.Startup.Opening">
+    <Position X="15.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAgAAAAQAAAAAAgAACAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\KernelContent\Startup\Opening.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Utils.Display.xConsole" Collapsed="true">
+    <Position X="10" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAgAAAAIAAIAAAAgAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Pulsee1\Utils\Display\xConsole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Utils.IO.TxtReader" Collapsed="true">
+    <Position X="18.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Utils\IO\TxtReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Utilities.Mathp.Lerp" Collapsed="true">
+    <Position X="11.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Pulsee1\Utils\Mathp\Lerp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pulsee1.Utils.Mathp.xRandom" Collapsed="true">
+    <Position X="11.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAACAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Utils\Mathp\xRandom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Pulsee1.Devices.Controls.Events.DeviceHandler.IDeviceHandler" Collapsed="true">
+    <Position X="10" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Devices\Controls\Events\DeviceEventHandler\IDeviceHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Pulsee1.Game.GameStates.BaseState.IStateEnum" Collapsed="true">
+    <Position X="11.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pulsee1\Game\GameStates\BaseState\State.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Pulsee1.BuildType" Collapsed="true">
+    <Position X="10" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Pulsee1\AppData.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Pulsee1.Game.LevelGenerators.Generators.RoomCharacter" Collapsed="true">
+    <Position X="13.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAABAAAAAACAAAAAA=</HashCode>
+      <FileName>Pulsee1\Game\Generators\LevelGenerators\FloorGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Pulsee1.Utils.Display.MessageType" Collapsed="true">
+    <Position X="11.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAABAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Pulsee1\Utils\Display\xConsole.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

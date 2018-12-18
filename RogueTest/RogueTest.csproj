@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{320ADC99-FD2A-41F4-AACA-8C2BA6599195}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RogueTest</RootNamespace>
+    <AssemblyName>RogueTest</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>pulsee.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OpenTK, Version=2.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.2.0.0\lib\net20\OpenTK.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pulsee1\AppData.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Binding\GamePadButton.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Binding\KeyBinding.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Args\GamePad\GamePadButtonEventArgs.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Args\GamePad\GamePadStickEventArgs.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Args\GamePad\GamePadTriggerEventArgs.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Peripherals\GamepadDevice.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Peripherals\GamepadListener.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Peripherals\GamepadStateWeighted.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Peripherals\Ple_GamePad.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\GamePad\GamePadEventHandler.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\IDeviceHandler.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Keyboard\KeyboardEventHandler.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Mouse\MouseEventHandler.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Events\EventManager.cs" />
+    <Compile Include="Pulsee1\Devices\Display\Window\Ple_GameWindow.cs" />
+    <Compile Include="Pulsee1\Graphics\PulseGL.cs" />
+    <Compile Include="Pulsee1\Graphics\Shaders\Shader.cs" />
+    <Compile Include="Pulsee1\Graphics\Shaders\ShaderProgram.cs" />
+    <Compile Include="Pulsee1\Devices\Display\Window\Resolutions.cs" />
+    <Compile Include="Pulsee1\Devices\Display\DisplayManager.cs" />
+    <Compile Include="Pulsee1\Game\GameContent\Characters\Baddies\Baddy.cs" />
+    <Compile Include="Pulsee1\Game\GameContent\Characters\Character.cs" />
+    <Compile Include="Pulsee1\Devices\Display\VirtualDevice\Camera.cs" />
+    <Compile Include="Pulsee1\GameManager.cs" />
+    <Compile Include="Pulsee1\Game\GameContent\Characters\Player\Player.cs" />
+    <Compile Include="Pulsee1\Game\GameContent\Level\Floor.cs" />
+    <Compile Include="Pulsee1\Game\GameContent\Level\Room.cs" />
+    <Compile Include="Pulsee1\Devices\Display\Window\Context.cs" />
+    <Compile Include="Pulsee1\Game\GameContent\Level\Tile.cs" />
+    <Compile Include="Pulsee1\Game\GameStates\GameStatesManager.cs" />
+    <Compile Include="Pulsee1\Game\Generators\LevelGenerators\FloorGenerator.cs" />
+    <Compile Include="Pulsee1\Game\Generators\GeneratorsManager.cs" />
+    <Compile Include="Pulsee1\Game\Generators\LevelGenerators\RoomGenerator.cs" />
+    <Compile Include="Pulsee1\Graphics\GraphicsManager.cs" />
+    <Compile Include="Pulsee1\Graphics\Loader\TextureStore.cs" />
+    <Compile Include="Pulsee1\Graphics\Textures\Texture2D.cs" />
+    <Compile Include="Pulsee1\Graphics\Loader\TextureLoader.cs" />
+    <Compile Include="Pulsee1\KernelContent\Startup\Opening.cs" />
+    <Compile Include="Pulsee1\Utils\IO\DirManagement.cs" />
+    <Compile Include="Pulsee1\Utils\IO\TxtReader.cs" />
+    <Compile Include="Pulsee1\Utils\IO\xPath.cs" />
+    <Compile Include="Pulsee1\Utils\Mathp\Lerp.cs" />
+    <Compile Include="Pulsee1\Utils\Mathp\xMath.cs" />
+    <Compile Include="Pulsee1\Utils\Mathp\xRandom.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pulsee1\Game\GameStates\States\LevelState.cs" />
+    <Compile Include="Pulsee1\Game\GameStates\States\LoseState.cs" />
+    <Compile Include="Pulsee1\Game\GameStates\States\MainMenuState.cs" />
+    <Compile Include="Pulsee1\Game\GameStates\States\WinState.cs" />
+    <Compile Include="Pulsee1\Utils\Display\xConsole.cs" />
+    <Compile Include="Pulsee1\Game\GameStates\BaseState\State.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Modelling\ClassDiagram.cd" />
+    <None Include="OpenTK.dll.config" />
+    <None Include="packages.config" />
+    <None Include="Pulsee1\Graphics\Shaders\GLSL\shader.frag" />
+    <None Include="Pulsee1\Graphics\Shaders\GLSL\shader.vert" />
+    <None Include="Pulsee1\Resources\Manual.pdf" />
+    <None Include="Pulsee1\Resources\Manual2.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pulsee1\Modeling\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pulsee1\KernelContent\Pictures\Icos\build.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="pulsee.ico" />
+    <Content Include="Pulsee1\KernelContent\Pictures\Icos\pulsee.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Pulsee1\KernelContent\Pictures\Splash\splashscreen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

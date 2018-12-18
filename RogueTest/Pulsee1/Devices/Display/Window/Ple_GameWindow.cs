@@ -1,6 +1,6 @@
 ﻿using OpenTK;
 using OpenTK.Graphics;
-using Pulsee1.Devices.Controls.Events.DeviceEventHandler.Args.GamePad;
+using Pulsee1.Devices.Controls.Events.DeviceEventHandler.Args.Gamepad;
 using Pulsee1.Utils.Display;
 using RogueTest.Pulsee1.Devices.Controls.Peripherals;
 using System;
@@ -27,27 +27,27 @@ namespace RogueTest.Pulsee1.Devices.Display.Window
 
         //public GamePadState a = new GamePadState();
 
-        public event EventHandler<GamePadButtonEventArgs> ButtonDown = delegate { };
-        public event EventHandler<GamePadButtonEventArgs> ButtonUp = delegate { };
-        public event EventHandler<GamePadButtonEventArgs> ButtonPressed = delegate { };
+        public event EventHandler<GamepadButtonEventArgs> ButtonDown = delegate { };
+        public event EventHandler<GamepadButtonEventArgs> ButtonUp = delegate { };
+        public event EventHandler<GamepadButtonEventArgs> ButtonPressed = delegate { };
 
-        public event EventHandler<GamePadTriggerEventArgs> TriggerDown = delegate { };
-        public event EventHandler<GamePadTriggerEventArgs> TriggerUp = delegate { };
-        public event EventHandler<GamePadTriggerEventArgs> TriggerPressed = delegate { };
+        public event EventHandler<GamepadTriggerEventArgs> TriggerDown = delegate { };
+        public event EventHandler<GamepadTriggerEventArgs> TriggerUp = delegate { };
+        public event EventHandler<GamepadTriggerEventArgs> TriggerPressed = delegate { };
 
-        public event EventHandler<GamePadStickEventArgs> StickMove = delegate { };
+        public event EventHandler<GamepadStickEventArgs> StickMove = delegate { };
 
-        protected virtual void OnButtonDown(GamePadButtonEventArgs e)
+        protected virtual void OnButtonDown(GamepadButtonEventArgs e)
         {
             ButtonDown(this, e);
         }
 
-        protected virtual void OnButtonUp(GamePadButtonEventArgs e)
+        protected virtual void OnButtonUp(GamepadButtonEventArgs e)
         {
             ButtonUp(this, e);
         }
 
-        protected virtual void OnButtonPressed(GamePadButtonEventArgs e)
+        protected virtual void OnButtonPressed(GamepadButtonEventArgs e)
         {
             ButtonPressed(this, e);
         }

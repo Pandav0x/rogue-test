@@ -1,27 +1,26 @@
 ﻿using System;
 using OpenTK.Input;
 using Pulsee1.Devices.Controls.Binding;
-using Pulsee1.Devices.Controls.Events.DeviceEventHandler.Args.GamePad;
-using Pulsee1.Utils.Display;
+using Pulsee1.Devices.Controls.Events.DeviceEventHandler.Args.Gamepad;
 
 namespace Pulsee1.Devices.Controls.Peripherals
 {
-    class Ple_GamePad : IInputDevice
+    class Ple_Gamepad : IInputDevice
     {
         private bool[] _buttons = new bool[Enum.GetValues(typeof(GamePadButtons)).Length];
         private string _description;
         private int _numButtons;
         private IntPtr _devID;
         private bool _repeat;
-        private GamePadButtonEventArgs bArgs = new GamePadButtonEventArgs();
+        private GamepadButtonEventArgs bArgs = new GamepadButtonEventArgs();
 
         #region contructors
 
-        internal Ple_GamePad() { return; }
+        internal Ple_Gamepad() { return; }
 
         #endregion
 
-        public bool this[GamePadButton button]
+        public bool this[GamepadButton button]
         {
             get { return _buttons[(int)button]; }
             internal set
@@ -56,8 +55,8 @@ namespace Pulsee1.Devices.Controls.Peripherals
             internal set { _devID = value; }
         }
         
-        public event EventHandler<GamePadButtonEventArgs> ButtonDown;
-        public event EventHandler<GamePadButtonEventArgs> ButtonUp;
+        public event EventHandler<GamepadButtonEventArgs> ButtonDown;
+        public event EventHandler<GamepadButtonEventArgs> ButtonUp;
 
         #region IInputDevice Members
 
@@ -77,8 +76,8 @@ namespace Pulsee1.Devices.Controls.Peripherals
         internal void ClearButtons()
         {
             for (int i = 0; i < _buttons.Length; i++)
-                if (this[(GamePadButton)i])
-                    this[(GamePadButton)i] = false;
+                if (this[(GamepadButton)i])
+                    this[(GamepadButton)i] = false;
             return;
         }
 

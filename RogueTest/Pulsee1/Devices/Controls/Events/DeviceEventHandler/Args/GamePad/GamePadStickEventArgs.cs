@@ -1,15 +1,15 @@
 ﻿using System;
 using OpenTK.Input;
 
-namespace Pulsee1.Devices.Controls.Events.DeviceEventHandler.Args.GamePad
+namespace Pulsee1.Devices.Controls.Events.DeviceEventHandler.Args.Gamepad
 {
-    class GamePadStickEventArgs : EventArgs
+    class GamepadStickEventArgs : EventArgs
     {
         public GamePadThumbSticks Stick { get; internal set; }
 
-        public GamePadStickEventArgs() { return; }
+        public GamepadStickEventArgs() { return; }
 
-        public GamePadStickEventArgs(GamePadStickEventArgs args)
+        public GamepadStickEventArgs(GamepadStickEventArgs args)
         {
             Stick = args.Stick;
         }

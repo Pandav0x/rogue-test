@@ -19,8 +19,8 @@ namespace Pulsee1.Devices.Controls.Binding
             { MouseButton.Middle, "MMB"}
         };
 
-        public static Dictionary<GamePadButton, string> gamePadBind = new Dictionary<GamePadButton, string> {
-            { GamePadButton.Start, "pause" }
+        public static Dictionary<GamepadButton, string> gamepadBind = new Dictionary<GamepadButton, string> {
+            { GamepadButton.Start, "pause" }
         };
 
         public enum DeviceType

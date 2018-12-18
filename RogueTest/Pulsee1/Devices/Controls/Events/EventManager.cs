@@ -1,6 +1,6 @@
 ﻿using Pulsee1.Devices.Controls.Events.DeviceHandler.Mouse;
 using Pulsee1.Devices.Controls.Events.DeviceHandler.Keyboard;
-using Pulsee1.Devices.Controls.Events.DeviceHandler.GamePad;
+using Pulsee1.Devices.Controls.Events.DeviceHandler.Gamepad;
 
 namespace Pulsee1.Devices.Controls.Events
 {
@@ -10,7 +10,7 @@ namespace Pulsee1.Devices.Controls.Events
 
         private MouseEventHandler meh;
         private KeyboardEventHandler keh;
-        private GamePadEventHandler geh;
+        private GamepadEventHandler geh;
 
         public EventManager(GameManager parent_)
         {
@@ -18,7 +18,7 @@ namespace Pulsee1.Devices.Controls.Events
 
             this.meh = new MouseEventHandler(this);
             this.keh = new KeyboardEventHandler(this);
-            this.geh = new GamePadEventHandler(this);
+            this.geh = new GamepadEventHandler(this);
             
             //Keyboard event binding (put in KeyboardEventHandler)
             this._parent.dim.window.KeyUp += this.keh.Keh_KeyUp;

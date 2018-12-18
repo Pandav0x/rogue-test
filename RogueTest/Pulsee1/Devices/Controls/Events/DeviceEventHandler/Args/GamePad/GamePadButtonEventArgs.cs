@@ -1,15 +1,15 @@
 ﻿using System;
 using Pulsee1.Devices.Controls.Binding;
 
-namespace Pulsee1.Devices.Controls.Events.DeviceEventHandler.Args.GamePad
+namespace Pulsee1.Devices.Controls.Events.DeviceEventHandler.Args.Gamepad
 {
-    class GamePadButtonEventArgs : EventArgs
+    class GamepadButtonEventArgs : EventArgs
     {
-        public GamePadButton Button { get; internal set; }
+        public GamepadButton Button { get; internal set; }
 
-        public GamePadButtonEventArgs() { return; }
+        public GamepadButtonEventArgs() { return; }
 
-        public GamePadButtonEventArgs(GamePadButtonEventArgs args)
+        public GamepadButtonEventArgs(GamepadButtonEventArgs args)
         {
             Button = args.Button;
         }

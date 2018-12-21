@@ -40,21 +40,11 @@ namespace RogueTest.Pulsee1.Devices.Controls.Peripherals
             }
         }
 
-        private float _triggerDZ; //trigger dead zone
-
-        public float TriggerDZ
-        {
-            get { return _triggerDZ; }
-            set { _triggerDZ = value; }
-        }
-
-
         #endregion
 
-        public GamepadStateWeighted(GamePadState state_, float stickDZ_ = 0.1f, float triggerDZ_ = 0.1f)
+        public GamepadStateWeighted(GamePadState state_, float stickDZ_ = 0.1f)
         {
             this.StickDZ = stickDZ_;
-            this.TriggerDZ = triggerDZ_;
             _gamepadState = state_;
             return;
         }
@@ -63,9 +53,19 @@ namespace RogueTest.Pulsee1.Devices.Controls.Peripherals
         {
             //TODO: same for right part
             //TODO: buttons
-            Vector2 aPos = a.GamepadState.ThumbSticks.Left.Yx;
 
-            bool ans = Math.Sqrt(Math.Pow(aPos.X, 2) + Math.Pow(aPos.Y, 2)) < a.StickDZ;
+            GamePadState aState = a.GamepadState;
+            GamePadState bState = b.GamepadState;
+
+            Vector2 aPosLeft = a.GamepadState.ThumbSticks.Left.Yx;
+            Vector2 aPosRight = a.GamepadState.ThumbSticks.Right.Yx;
+
+            bool ans = aState.DPad == bState.DPad;
+            ans &= aState.Buttons == bState.Buttons;
+            ans &= aState.Triggers.Left == bState.Triggers.Left;
+            ans &= aState.Triggers.Right == bState.Triggers.Right;
+            ans &= Math.Sqrt(Math.Pow(aPosLeft.X, 2) + Math.Pow(aPosLeft.Y, 2)) < a.StickDZ;
+            ans &= Math.Sqrt(Math.Pow(aPosRight.X, 2) + Math.Pow(aPosRight.Y, 2)) < a.StickDZ;
 
             return ans;
         }

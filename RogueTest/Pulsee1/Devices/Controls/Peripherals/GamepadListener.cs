@@ -22,10 +22,7 @@ namespace RogueTest.Pulsee1.Devices.Controls.Peripherals
                 xConsole.WriteLine(GamePad.GetName(index));
 
                 _gamepadDevices.Add(new GamepadDevice(
-                    index,
-                    GamePad.GetName(index), 
-                    GamePad.GetState(index), 
-                    GamePad.GetCapabilities(index)
+                    index
                 ));
 
             } while (GamePad.GetName(++index) != ""); //While the name is not nothing => while there's smthg

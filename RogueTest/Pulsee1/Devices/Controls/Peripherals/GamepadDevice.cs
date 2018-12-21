@@ -7,54 +7,56 @@ namespace RogueTest.Pulsee1.Devices.Controls.Peripherals
     class GamepadDevice
     {
         private Thread _thread;
-        private int _gamepadID;
+        private int _gamepadId;
         private string _gamepadName;
         private GamepadStateWeighted _actualState, _newState;
         private GamePadCapabilities _gamepadCapa;
 
         public GamepadDevice()
         {
-            _thread = new Thread(Listen);
+            this._thread = new Thread(Listen);
             return;
         }
 
-        public GamepadDevice(int index_, string name_, GamePadState state_, GamePadCapabilities capas_)
+        public GamepadDevice(int index_)
         {
-            this._gamepadID = index_;
-            this._gamepadName = name_;
-            this._actualState = _newState =  new GamepadStateWeighted(state_);
-            this._gamepadCapa = capas_;
+            this._gamepadId     = index_;
+            this._gamepadName   = GamePad.GetName(index_);
+            this._actualState   =  new GamepadStateWeighted(GamePad.GetState(this._gamepadId));
+            this._newState      = this._actualState;
+            this._gamepadCapa   = GamePad.GetCapabilities(index_);
 
-            _thread = new Thread(Listen);
+            this._thread        = new Thread(this.Listen);
 
             return;
         }
 
         public void StartListening()
         {
-            _thread.Start();
+            this._thread.Start();
             return;
         }
 
         private void GetNewGamepadState()
         {
-            _newState = new GamepadStateWeighted(GamePad.GetState(this._gamepadID));
-
+            this._newState = new GamepadStateWeighted(GamePad.GetState(this._gamepadId));
             return;
         }
 
         private void Listen()
         {
-            while (true)
+            do
             {
+                if (this._gamepadId == 1) //TODO: delete this. Testing purpose only
+                    break;
                 GetNewGamepadState();
-                xConsole.WriteLine(GamepadStateWeighted.SticksMoveWeighted(_actualState, _newState).ToString());
-                if (_actualState == _newState)
+                //Thread.Sleep(100); //TODO: remove this line
+                if (this._actualState != this._newState)
                 {
-                    xConsole.WriteLine(this._gamepadName + " - event");
-                    _actualState = _newState;
+                    xConsole.WriteLine("event");
                 }
-            }
+                this._actualState = this._newState;
+            } while (true);
             return;
         }
     }

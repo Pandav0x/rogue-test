@@ -17,19 +17,19 @@
   <Class Name="Pulsee1.AppData" Collapsed="true">
     <Position X="10" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIACAAAAAAAAAAAABAAQAAAgIEAAAAAAAABAAAQAA=</HashCode>
+      <HashCode>AAAIACAAAAAAAEAEAABAAQAAAgIEAAAAAAAAAAAAAJA=</HashCode>
       <FileName>Pulsee1\AppData.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pulsee1.Devices.Controls.Binding.KeyBinding" Collapsed="true">
     <Position X="18.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAAAAAAAACAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAEAgAAAAAAAAAA=</HashCode>
       <FileName>Pulsee1\Devices\Controls\Binding\KeyBinding.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pulsee1.Devices.Controls.Events.DeviceHandler.Controller.ControllerEventHandler" Collapsed="true">
-    <Position X="15.25" Y="0.5" Width="1.5" />
+    <Position X="18.75" Y="8.25" Width="5.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Pulsee1\Devices\Controls\Events\DeviceEventHandler\Controller\ControllerEventHandler.cs</FileName>
@@ -38,40 +38,40 @@
   <Class Name="Pulsee1.Devices.Controls.Events.DeviceHandler.Keyboard.KeyboardEventHandler" Collapsed="true">
     <Position X="10" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgEAAAAAAAEAAAAgAAAAAQAAAEAAAAAAAAABAAAAA=</HashCode>
+      <HashCode>AAAgEAAAAAAAEAAAAgAAAAAQAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Pulsee1\Devices\Controls\Events\DeviceEventHandler\Keyboard\KeyboardEventHandler.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pulsee1.Devices.Controls.Events.DeviceHandler.Mouse.MouseEventHandler" Collapsed="true">
     <Position X="13.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AEAAAAgAAAAAUAAAAgAAAAAQAAAAAACAAAAAIAAQAAA=</HashCode>
       <FileName>Pulsee1\Devices\Controls\Events\DeviceEventHandler\Mouse\MouseEventHandler.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pulsee1.Devices.Controls.Events.EventManager" Collapsed="true">
     <Position X="18.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAEBQAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEQQAQAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Pulsee1\Devices\Controls\Events\EventManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pulsee1.Devices.Controls.Peripherals.S_Controller" Collapsed="true">
-    <Position X="13.5" Y="3.5" Width="1.5" />
+    <Position X="15.25" Y="9.25" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Pulsee1\Devices\Controls\Peripherals\S_Controller.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pulsee1.Devices.Controls.Peripherals.S_Keyboard" Collapsed="true">
-    <Position X="15.25" Y="4.75" Width="1.5" />
+    <Position X="15.25" Y="8.25" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABABAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Pulsee1\Devices\Controls\Peripherals\S_Keyboard.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pulsee1.Devices.Controls.Peripherals.S_Mouse" Collapsed="true">
-    <Position X="17" Y="6.75" Width="1.5" />
+    <Position X="15.25" Y="7.25" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Pulsee1\Devices\Controls\Peripherals\S_Mouse.cs</FileName>
@@ -138,13 +138,6 @@
   </Class>
   <Class Name="Pulsee1.Game.GameContent.Level.Floor" Collapsed="true">
     <Position X="10" Y="1.5" Width="1.5" />
-    <NestedTypes>
-      <Enum Name="Pulsee1.Game.GameContent.Level.Floor.FloorTypes" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Pulsee1\Game\GameContent\Level\Floor.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAgAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Pulsee1\Game\GameContent\Level\Floor.cs</FileName>
@@ -158,16 +151,16 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Pulsee1.Game.GameContent.Level.Tile" Collapsed="true">
-    <Position X="17" Y="7.5" Width="1.5" />
+    <Position X="13.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAACAYAIAECAAIAAAQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Pulsee1\Game\GameContent\Level\Tile.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pulsee1.Game.GameStates.BaseState.State" Collapsed="true">
-    <Position X="4" Y="0.5" Width="1.5" />
+    <Position X="3" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAiAAAQAAAAAAAAAQAAAAAAAAIAAAAAAQAAA=</HashCode>
+      <HashCode>AAAAAAAAAiAAAQAAAAAAQAAQAAAAAAAAIAAAAAAAAAA=</HashCode>
       <FileName>Pulsee1\Game\GameStates\BaseState\State.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -180,28 +173,28 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Pulsee1.Game.GameStates.States.LevelState" Collapsed="true">
-    <Position X="0.75" Y="1.75" Width="1.5" />
+    <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgAAAAAIAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
       <FileName>Pulsee1\Game\GameStates\States\LevelState.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pulsee1.Game.GameStates.States.LoseState" Collapsed="true">
-    <Position X="3" Y="1.75" Width="1.5" />
+    <Position X="2.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Pulsee1\Game\GameStates\States\LoseState.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pulsee1.Game.GameStates.States.MainMenuState" Collapsed="true">
-    <Position X="5.25" Y="1.75" Width="1.5" />
+    <Position X="4" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Pulsee1\Game\GameStates\States\MainMenuState.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pulsee1.Game.GameStates.States.WinState" Collapsed="true">
-    <Position X="7.5" Y="1.75" Width="1.5" />
+    <Position X="5.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Pulsee1\Game\GameStates\States\WinState.cs</FileName>
@@ -243,9 +236,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Pulsee1.Graphics.Loader.TextureStore" Collapsed="true">
-    <Position X="15.25" Y="5.5" Width="1.5" />
+    <Position X="13.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAABABAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Pulsee1\Graphics\Loader\TextureStore.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -257,7 +250,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Pulsee1.Display.Graphics.GLOverlay.Shaders.Shader" Collapsed="true">
-    <Position X="18.75" Y="5.75" Width="1.5" />
+    <Position X="15.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAAA=</HashCode>
       <FileName>Pulsee1\Graphics\Shaders\Shader.cs</FileName>
@@ -287,12 +280,12 @@
   <Class Name="Pulsee1.Utils.Display.xConsole" Collapsed="true">
     <Position X="10" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAgAAAAIAAIAAAAgAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <HashCode>AABAAAAAAAgAAAAIAAIAAAAhAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Pulsee1\Utils\Display\xConsole.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Pulsee1.Utils.IO.TxtReader" Collapsed="true">
-    <Position X="18.75" Y="6.5" Width="1.5" />
+    <Position X="15.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Pulsee1\Utils\IO\TxtReader.cs</FileName>

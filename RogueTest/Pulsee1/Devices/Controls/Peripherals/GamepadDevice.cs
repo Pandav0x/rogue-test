@@ -47,10 +47,7 @@ namespace RogueTest.Pulsee1.Devices.Controls.Peripherals
         {
             do
             {
-                if (this._gamepadId == 1) //TODO: delete this. Testing purpose only
-                    break;
                 GetNewGamepadState();
-                //Thread.Sleep(100); //TODO: remove this line
                 if (this._actualState != this._newState)
                 {
                     xConsole.WriteLine("event");

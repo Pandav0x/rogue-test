@@ -61,16 +61,12 @@ namespace RogueTest.Pulsee1.Devices.Controls.Peripherals
 
         public static bool operator ==(GamepadStateWeighted a, GamepadStateWeighted b)
         {
-            //TODO: correct the pb when negative number are given -> 
-            //  x:-5 to x:6, both < Dz but sums up to be >
-
+            //TODO: same for right part
+            //TODO: buttons
             Vector2 aPos = a.GamepadState.ThumbSticks.Left.Yx;
-            Vector2 bPos = b.GamepadState.ThumbSticks.Left.Yx;
 
-            bool ans = true;
-            ans &= a._gamepadState.Equals(b._gamepadState);
-            ans &= Math.Sqrt(Math.Pow(aPos.X, 2) + Math.Pow(aPos.Y, 2)) >= Math.Pow(a.StickDZ, 2);
-            ans &= Math.Sqrt(Math.Pow(bPos.X, 2) + Math.Pow(bPos.Y, 2)) >= Math.Pow(b.StickDZ, 2);
+            bool ans = Math.Sqrt(Math.Pow(aPos.X, 2) + Math.Pow(aPos.Y, 2)) < a.StickDZ;
+
             return ans;
         }
 

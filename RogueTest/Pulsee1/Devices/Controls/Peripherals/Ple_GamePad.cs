@@ -7,12 +7,13 @@ namespace Pulsee1.Devices.Controls.Peripherals
 {
     class Ple_Gamepad : IInputDevice
     {
-        private bool[] _buttons = new bool[Enum.GetValues(typeof(GamePadButtons)).Length];
+        private bool[] _buttons = new bool[Enum.GetValues(typeof(GamepadButton)).Length];
         private string _description;
         private int _numButtons;
         private IntPtr _devID;
         private bool _repeat;
-        private GamepadButtonEventArgs bArgs = new GamepadButtonEventArgs();
+        private GamepadEventArgs bArgs = new GamepadEventArgs();
+
 
         #region contructors
 
@@ -39,6 +40,11 @@ namespace Pulsee1.Devices.Controls.Peripherals
                         bArgs.Button = button;
                         ButtonUp(this, bArgs);
                     }
+                    else if (!value && ButtonPressed != null)
+                    {
+                        bArgs.Button = button;
+                        ButtonPressed(this, bArgs);
+                    }
                 }
             }
         }
@@ -55,8 +61,9 @@ namespace Pulsee1.Devices.Controls.Peripherals
             internal set { _devID = value; }
         }
         
-        public event EventHandler<GamepadButtonEventArgs> ButtonDown;
-        public event EventHandler<GamepadButtonEventArgs> ButtonUp;
+        public event EventHandler<GamepadEventArgs> ButtonDown;
+        public event EventHandler<GamepadEventArgs> ButtonUp;
+        public event EventHandler<GamepadEventArgs> ButtonPressed;
 
         #region IInputDevice Members
 

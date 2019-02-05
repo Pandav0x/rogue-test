@@ -21,21 +21,22 @@ namespace Pulsee1.Devices.Controls.Events
             this.geh = new GamepadEventHandler(this);
             
             //Keyboard event binding (put in KeyboardEventHandler)
-            this._parent.dim.window.KeyUp += this.keh.Keh_KeyUp;
-            this._parent.dim.window.KeyPress += this.keh.Keh_KeyPress;
-            this._parent.dim.window.Keyboard.KeyDown += this.keh.Keh_KeyDown;
+            this._parent.dim.window.KeyUp               += this.keh.Keh_KeyUp;
+            this._parent.dim.window.KeyPress            += this.keh.Keh_KeyPress;
+            this._parent.dim.window.Keyboard.KeyDown    += this.keh.Keh_KeyDown;
 
             //Mouse event binding
-            this._parent.dim.window.MouseEnter += this.meh.Meh_MouseEnter;
-            this._parent.dim.window.MouseLeave += this.meh.Meh_MouseLeave;
-            this._parent.dim.window.MouseMove += this.meh.Meh_MouseMove;
-            this._parent.dim.window.MouseDown += this.meh.Meh_MouseDown;
-            this._parent.dim.window.MouseUp += this.meh.Meh_MouseUp;
-            this._parent.dim.window.MouseWheel += this.meh.Meh_MouseWheel;
+            this._parent.dim.window.MouseEnter          += this.meh.Meh_MouseEnter;
+            this._parent.dim.window.MouseLeave          += this.meh.Meh_MouseLeave;
+            this._parent.dim.window.MouseMove           += this.meh.Meh_MouseMove;
+            this._parent.dim.window.MouseDown           += this.meh.Meh_MouseDown;
+            this._parent.dim.window.MouseUp             += this.meh.Meh_MouseUp;
+            this._parent.dim.window.MouseWheel          += this.meh.Meh_MouseWheel;
 
             //GamePad event binding
-            this._parent.dim.window.ButtonDown += this.geh.Geh_ButtonDown;
-            this._parent.dim.window.ButtonUp += this.geh.Geh_ButtonUp;
+            this._parent.dim.window.ButtonDown          += this.geh.Geh_ButtonDown;
+            this._parent.dim.window.ButtonUp            += this.geh.Geh_ButtonUp;
+            this._parent.dim.window.ButtonPressed       += this.geh.Geh_ButtonPressed;
 
             return;
         }

@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using OpenTK.Input;
 using Pulsee1.Utils.Display;
+using RogueTest.Pulsee1.Devices.Display.Window;
 
-namespace RogueTest.Pulsee1.Devices.Controls.Peripherals
+namespace Pulsee1.Devices.Controls.Peripherals
 {
     class GamepadListener
     {
@@ -30,7 +31,7 @@ namespace RogueTest.Pulsee1.Devices.Controls.Peripherals
             return;
         }
 
-        public static void Start()
+        public static void Start(Ple_GameWindow context)
         {
             _instance = _instance ?? new GamepadListener();
             _gamepadDevices = new List<GamepadDevice>();
@@ -39,7 +40,7 @@ namespace RogueTest.Pulsee1.Devices.Controls.Peripherals
 
             foreach (GamepadDevice gd in _gamepadDevices)
             {
-                gd.StartListening();
+                gd.StartListening(context);
             }
 
             return;

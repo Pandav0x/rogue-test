@@ -57,8 +57,7 @@ namespace Pulsee1.Devices.Controls.Events.DeviceHandler.Mouse
         }
 
         public void Meh_MouseWheel(object sender, MouseWheelEventArgs e)
-        {
-            xConsole.WriteLine("My dick is big like really", ConsoleColor.DarkGreen);
+        { 
             return;
         }
 

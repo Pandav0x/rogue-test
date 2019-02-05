@@ -57,13 +57,11 @@
     <Compile Include="Pulsee1\AppData.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Binding\GamepadButton.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Binding\KeyBinding.cs" />
-    <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Args\Gamepad\GamepadButtonEventArgs.cs" />
-    <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Args\Gamepad\GamepadStickEventArgs.cs" />
-    <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Args\Gamepad\GamepadTriggerEventArgs.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Args\Gamepad\GamepadEventArgs.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Peripherals\GamepadDevice.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Peripherals\GamepadListener.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Peripherals\GamepadStateWeighted.cs" />
-    <Compile Include="Pulsee1\Devices\Controls\Peripherals\Ple_GamePad.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\Peripherals\Ple_Gamepad.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Gamepad\GamepadEventHandler.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\IDeviceHandler.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Keyboard\KeyboardEventHandler.cs" />

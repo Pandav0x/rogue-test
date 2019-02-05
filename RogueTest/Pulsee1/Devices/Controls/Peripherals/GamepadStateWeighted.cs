@@ -3,7 +3,7 @@ using OpenTK.Input;
 using RogueTest.Pulsee1.Utils.Mathp;
 using System;
 
-namespace RogueTest.Pulsee1.Devices.Controls.Peripherals
+namespace Pulsee1.Devices.Controls.Peripherals
 {
     class GamepadStateWeighted
     {
@@ -51,9 +51,6 @@ namespace RogueTest.Pulsee1.Devices.Controls.Peripherals
 
         public static bool operator ==(GamepadStateWeighted a, GamepadStateWeighted b)
         {
-            //TODO: same for right part
-            //TODO: buttons
-
             GamePadState aState = a.GamepadState;
             GamePadState bState = b.GamepadState;
 

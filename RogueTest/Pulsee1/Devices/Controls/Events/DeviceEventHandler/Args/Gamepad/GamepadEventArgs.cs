@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using Pulsee1.Devices.Controls.Binding;
+using Pulsee1.Devices.Controls.Peripherals;
 
 namespace Pulsee1.Devices.Controls.Events.DeviceEventHandler.Args.Gamepad
 {
@@ -7,11 +9,13 @@ namespace Pulsee1.Devices.Controls.Events.DeviceEventHandler.Args.Gamepad
     {
         public GamepadButton Button { get; internal set; }
 
+        public List<GamepadButton> Buttons { get; set; }
+
         public GamepadEventArgs() { return; }
 
         public GamepadEventArgs(GamepadEventArgs args)
         {
-            Button = args.Button;
+            this.Button = args.Button;
         }
     }
 }

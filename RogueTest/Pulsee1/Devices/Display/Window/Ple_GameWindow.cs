@@ -9,17 +9,17 @@ namespace RogueTest.Pulsee1.Devices.Display.Window
 {
     class Ple_GameWindow : GameWindow, IDisposable
     {
-        private Type nativeWindow;
+        private Type NativeWindow;
 
         public Ple_GameWindow(int width, int height, GraphicsMode mode, string title, GameWindowFlags options, 
             DisplayDevice device, int major, int minor, GraphicsContextFlags flags) 
             : base(width, height, mode, title, options, device, major, minor, flags)
         {
-            xConsole.WriteLine(new String('-', 20), System.ConsoleColor.Cyan);
+            xConsole.WriteLine(new String('-', 20), ConsoleColor.Cyan);
 
             GamepadListener.Start(this);
 
-            xConsole.WriteLine(new String('-', 20), System.ConsoleColor.Cyan);
+            xConsole.WriteLine(new String('-', 20), ConsoleColor.Cyan);
             return;
         }        
 

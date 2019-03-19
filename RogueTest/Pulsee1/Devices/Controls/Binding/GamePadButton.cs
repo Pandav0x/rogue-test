@@ -1,4 +1,7 @@
-﻿namespace Pulsee1.Devices.Controls.Binding
+﻿using Pulsee1.Devices.Controls.Peripherals;
+using System;
+
+namespace Pulsee1.Devices.Controls.Binding
 {
     public enum GamepadButton : int
     {

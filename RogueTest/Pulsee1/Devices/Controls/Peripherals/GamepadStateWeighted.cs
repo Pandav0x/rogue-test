@@ -17,9 +17,6 @@ namespace Pulsee1.Devices.Controls.Peripherals
             set { _gamepadState = value; }
         }
 
-
-        public GamePadState gamepadState {get; set;}
-
         public GamePadThumbSticks ThumbSticks;
         public GamePadTriggers Triggers;
         public GamePadButtons Buttons;
@@ -46,6 +43,12 @@ namespace Pulsee1.Devices.Controls.Peripherals
         {
             this.StickDZ = stickDZ_;
             _gamepadState = state_;
+            return;
+        }
+
+        public GamepadStateWeighted(GamepadStateWeighted state_)
+        {
+            this._gamepadState = state_._gamepadState;
             return;
         }
 

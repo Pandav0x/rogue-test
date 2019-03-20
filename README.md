@@ -12,7 +12,7 @@ I have plans to make this project into a NuGet package when it'll be more comple
 1) Clone the repo.
 2) Open the `RogueTest.sln` file.
 
-There is two project in the solution: `GamePadDetector` which is a test for the gamepads handling with OpenTK, and `RogueTest`. Be sure to open the later one and set it as the default project.
+There is two projects in the solution: `GamePadDetector` which is a test for the gamepads' handling with OpenTK, and `RogueTest`. Be sure to open the later one and set it as the default project.
 
 3) Go under the `Pulsee1/` folder, here lies all the framework content.
 4) Install `OpenTK 2.0.0` from the NuGet Package Manager. 

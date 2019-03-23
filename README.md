@@ -9,14 +9,26 @@ I have plans to make this project into a NuGet package when it'll be more comple
 
 ## How to Install
 
+### Windows (using VS)
+
+I will asume that if you are not runing VS to code C#, you are skilled enough to skip to the third point right away.
+
 1) Clone the repo.
 2) Open the `RogueTest.sln` file.
 
 There is two projects in the solution: `GamePadDetector` which is a test for the gamepads' handling with OpenTK, and `RogueTest`. Be sure to open the later one and set it as the default project.
 
 3) Go under the `Pulsee1/` folder, here lies all the framework content.
-4) Install `OpenTK 2.0.0` from the NuGet Package Manager. 
+4) Install `OpenTK 2.0.0` from the NuGet Package Manager.
 5) You're good to go.
+
+### Linux
+
+1) Atempting to do this
+
+### Mac
+
+1) Either you can do it yourself, or you can buy a computer running windows or linux.
 
 ## Structure
 

@@ -28,20 +28,19 @@ namespace Pulsee1.Devices.Controls.Events.DeviceHandler.Gamepad
         public void Geh_ButtonDown(object sender, GamepadEventArgs e)
         {
             //TODO
-            foreach (GamepadButton b in e.Buttons)
-                xConsole.WriteLine(b.ToString());
+            xConsole.WriteLine(e.Button.ToString() + " - Pressed");
+        }
+
+        public void Geh_ButtonUp(object sender, GamepadEventArgs e)
+        {
+            xConsole.WriteLine(e.Button.ToString() + " - Released");
+            //throw new NotImplementedException();
         }
 
         public void Geh_ButtonPressed(object sender, GamepadEventArgs e)
         {
             xConsole.WriteLine("Button pressed");
             return;
-        }
-
-        internal void Geh_ButtonUp(object sender, GamepadEventArgs e)
-        {
-            return;
-            //throw new NotImplementedException();
         }
     }
 }

@@ -59,10 +59,11 @@ namespace Pulsee1.Devices.Controls.Peripherals
                 GetNewGamepadState();
                 if (this._actualState != this._newState)
                 {
-                    GamepadEventArgs buttonArgs = new GamepadEventArgs();
-                    buttonArgs.Buttons = RetrievePressedButtons();
+                    GamepadEventArgs buttonArgs = new GamepadEventArgs {
+                        Button = RetrievePressedButtons()
+                    };
 
-                    //TODO: fix gamepad args when events raise
+                    //TODO: fix <= cannot get args when pressing one button while another one is pressed
 
                     if (GamePad.GetState(this._gamepadId).Buttons.IsAnyButtonPressed && !buttonPressed)
                     {
@@ -80,25 +81,38 @@ namespace Pulsee1.Devices.Controls.Peripherals
             return;
         }
 
-        private List<GamepadButton> RetrievePressedButtons()
+        private GamepadButton RetrievePressedButtons()
         {
-            List<GamepadButton> ans = new List<GamepadButton>();
+            GamepadButton ans = 0;
+
             if (this._newState.GamepadState.Buttons.A == ButtonState.Pressed)
-                ans.Add(GamepadButton.A);
+                ans = GamepadButton.A;
             if (this._newState.GamepadState.Buttons.B == ButtonState.Pressed)
-                ans.Add(GamepadButton.B);
+                ans = GamepadButton.B;
             if (this._newState.GamepadState.Buttons.X == ButtonState.Pressed)
-                ans.Add(GamepadButton.X);
+                ans = GamepadButton.X;
             if (this._newState.GamepadState.Buttons.Y == ButtonState.Pressed)
-                ans.Add(GamepadButton.Y);
+                ans = GamepadButton.Y;
+            //Shoulder buttons
             if (this._newState.GamepadState.Buttons.LeftShoulder == ButtonState.Pressed)
-                ans.Add(GamepadButton.LB);
+                ans = GamepadButton.LB;
             if (this._newState.GamepadState.Buttons.RightShoulder == ButtonState.Pressed)
-                ans.Add(GamepadButton.RB);
+                ans = GamepadButton.RB;
+            //Start/select
             if (this._newState.GamepadState.Buttons.Start == ButtonState.Pressed)
-                ans.Add(GamepadButton.Start);
+                ans = GamepadButton.Start;
             if (this._newState.GamepadState.Buttons.Back == ButtonState.Pressed)
-                ans.Add(GamepadButton.Back);
+                ans = GamepadButton.Back;
+            //Dpad
+            if (this._newState.GamepadState.DPad.IsUp)
+                ans = GamepadButton.DPadUp;
+            if (this._newState.GamepadState.DPad.IsDown)
+                ans = GamepadButton.DPadDown;
+            if (this._newState.GamepadState.DPad.IsLeft)
+                ans = GamepadButton.DPadLeft;
+            if (this._newState.GamepadState.DPad.IsRight)
+                ans = GamepadButton.DPadRight;
+
             return ans;
         }
     }

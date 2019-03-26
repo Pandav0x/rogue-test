@@ -7,9 +7,9 @@ namespace Pulsee1.Devices.Controls.Events.DeviceEventHandler.Args.Gamepad
 {
     class GamepadEventArgs : EventArgs
     {
-        public GamepadButton Button { get; internal set; }
+        //TODO : Add a reference to the previously pressed button in order to get it in the release event arg
 
-        public List<GamepadButton> Buttons { get; set; }
+        public GamepadButton Button { get; internal set; }
 
         public GamepadEventArgs() { return; }
 

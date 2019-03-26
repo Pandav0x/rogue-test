@@ -44,3 +44,8 @@ All those files are in the `~/Pulsee1/` folder.
 `Modeling/` | Will contain the modeling files (class diag...)
 `Resources` | Contains 2 PDFs with documentation and/or tutorial related to OpenTK.
 `Utilities/` | Contains a bunch of useful classes (display in the console with colors / generate a random integer / LERP / even number check / text file IO / etc...)
+
+## Known isues
+
+* Ghost Gamepad
+    * The program will often detect an unknown gamepad even if none are pluged.

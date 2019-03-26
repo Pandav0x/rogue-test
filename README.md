@@ -49,3 +49,5 @@ All those files are in the `~/Pulsee1/` folder.
 
 * Ghost Gamepad
     * The program will often detect an unknown gamepad even if none are pluged.
+* Multi press on gamepad
+    * It is curently impossible to generate new inputs while a button is pressed.

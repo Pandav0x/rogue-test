@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pulsee1.Utilities.Mathp
+namespace Pulsee1.Utils.Mathp
 {
     //It really bothers me that there is no easy LERPing methods available in C# / or math method
     class Lerp

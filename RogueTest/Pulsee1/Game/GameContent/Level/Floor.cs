@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-using OpenTK;
-using Pulsee1.Utilities.Mathp;
+﻿using OpenTK;
 using System.Collections.Generic;
 
 namespace Pulsee1.Game.GameContent.Level

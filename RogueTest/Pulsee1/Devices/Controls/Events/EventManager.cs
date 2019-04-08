@@ -38,6 +38,12 @@ namespace Pulsee1.Devices.Controls.Events
             this._parent.dim.window.ButtonUp            += this.geh.Geh_ButtonUp;
             this._parent.dim.window.ButtonPressed       += this.geh.Geh_ButtonPressed;
 
+            this._parent.dim.window.TriggerDown         += this.geh.Geh_TriggerDown;
+            this._parent.dim.window.TriggerUp           += this.geh.Geh_TriggerUp;
+
+            this._parent.dim.window.LeftStickMove       += this.geh.Geh_LeftStickMove;
+            this._parent.dim.window.RightStickMove      += this.geh.Geh_RightStickMove;
+
             return;
         }
     }

@@ -1,6 +1,5 @@
 ﻿using OpenTK;
 using OpenTK.Input;
-using RogueTest.Pulsee1.Utils.Mathp;
 using System;
 
 namespace Pulsee1.Devices.Controls.Peripherals
@@ -52,32 +51,59 @@ namespace Pulsee1.Devices.Controls.Peripherals
             return;
         }
 
+
+        /**
+         * Joysticks
+         */
+        public static bool LeftStickStatesEquals(GamepadStateWeighted a, GamepadStateWeighted b)
+        {
+            Vector2 aPosLeft = a.GamepadState.ThumbSticks.Left.Yx;
+            return Math.Sqrt(Math.Pow(aPosLeft.X, 2) + Math.Pow(aPosLeft.Y, 2)) < a.StickDZ; ;
+        }
+
+        public static bool RightStickStatesEquals(GamepadStateWeighted a, GamepadStateWeighted b)
+        {
+            Vector2 aPosRight = a.GamepadState.ThumbSticks.Right.Yx;
+            return Math.Sqrt(Math.Pow(aPosRight.X, 2) + Math.Pow(aPosRight.Y, 2)) < a.StickDZ;
+        }
+
+        public static bool StickStatesEquals(GamepadStateWeighted a, GamepadStateWeighted b)
+        {
+            return LeftStickStatesEquals(a, b) && RightStickStatesEquals(a, b);
+        }
+
+        /**
+         * Triggers
+         */
+        public static bool LeftTriggerStatesEquals(GamepadStateWeighted a, GamepadStateWeighted b)
+        {
+            return a.GamepadState.Triggers.Left == b.GamepadState.Triggers.Left; ;
+        }
+
+        public static bool RightTriggerStatesEquals(GamepadStateWeighted a, GamepadStateWeighted b)
+        {
+            return a.GamepadState.Triggers.Right == b.GamepadState.Triggers.Right;
+        }
+
+        public static bool TriggerStatesEquals(GamepadStateWeighted a, GamepadStateWeighted b)
+        {
+            return LeftTriggerStatesEquals(a, b) && RightTriggerStatesEquals(a, b);
+        }
+
+
+        //operator definitions
         public static bool operator ==(GamepadStateWeighted a, GamepadStateWeighted b)
         {
-            GamePadState aState = a.GamepadState;
-            GamePadState bState = b.GamepadState;
-
-            Vector2 aPosLeft = a.GamepadState.ThumbSticks.Left.Yx;
-            Vector2 aPosRight = a.GamepadState.ThumbSticks.Right.Yx;
-
-            bool ans = aState.DPad == bState.DPad;
-            ans &= aState.Buttons == bState.Buttons;
-            ans &= aState.Triggers.Left == bState.Triggers.Left;
-            ans &= aState.Triggers.Right == bState.Triggers.Right;
-            ans &= Math.Sqrt(Math.Pow(aPosLeft.X, 2) + Math.Pow(aPosLeft.Y, 2)) < a.StickDZ;
-            ans &= Math.Sqrt(Math.Pow(aPosRight.X, 2) + Math.Pow(aPosRight.Y, 2)) < a.StickDZ;
-
+            bool ans = a.GamepadState.DPad == b.GamepadState.DPad;
+            ans &= a.GamepadState.Buttons == b.GamepadState.Buttons;
+            ans &= GamepadStateWeighted.TriggerStatesEquals(a, b);
+            ans &= GamepadStateWeighted.StickStatesEquals(a, b);
             return ans;
         }
 
         public static bool operator !=(GamepadStateWeighted a, GamepadStateWeighted b)
         {
             return !(a==b);
-        }
-
-        private static bool TriggersMoveWeighted(GamepadStateWeighted a, GamepadStateWeighted b)
-        {
-            return false;
         }
 
         public override string ToString()

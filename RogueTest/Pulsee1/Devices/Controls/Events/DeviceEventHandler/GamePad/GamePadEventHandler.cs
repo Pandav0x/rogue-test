@@ -42,5 +42,29 @@ namespace Pulsee1.Devices.Controls.Events.DeviceHandler.Gamepad
             xConsole.WriteLine("Button pressed");
             return;
         }
+
+        public void Geh_TriggerDown(object sender, GamepadEventArgs e)
+        {
+            xConsole.WriteLine("Trigger down");
+            return;
+        }
+
+        public void Geh_TriggerUp(object sender, GamepadEventArgs e)
+        {
+            xConsole.WriteLine("Trigger up");
+            return;
+        }
+
+        public void Geh_LeftStickMove(object sender, GamepadEventArgs e)
+        {
+            xConsole.WriteLine("lft stick moved");
+            return;
+        }
+
+        public void Geh_RightStickMove(object sender, GamepadEventArgs e)
+        {
+            xConsole.WriteLine("rgt stick moved");
+            return;
+        }
     }
 }

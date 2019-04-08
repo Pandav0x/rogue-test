@@ -31,7 +31,6 @@ namespace RogueTest.Pulsee1.Devices.Display.Window
 
         public event EventHandler<GamepadEventArgs> TriggerDown = delegate { };
         public event EventHandler<GamepadEventArgs> TriggerUp = delegate { };
-        public event EventHandler<GamepadEventArgs> TriggerPressed = delegate { };
 
         public event EventHandler<GamepadEventArgs> LeftStickMove = delegate { };
         public event EventHandler<GamepadEventArgs> RightStickMove = delegate { };
@@ -58,12 +57,7 @@ namespace RogueTest.Pulsee1.Devices.Display.Window
 
         public virtual void OnTriggerUp(GamepadEventArgs e)
         {
-            TriggerDown(this, e);
-        }
-
-        public virtual void OnTriggerPressed(GamepadEventArgs e)
-        {
-            TriggerDown(this, e);
+            TriggerUp(this, e);
         }
 
         public virtual void OnLeftStickMove(GamepadEventArgs e)

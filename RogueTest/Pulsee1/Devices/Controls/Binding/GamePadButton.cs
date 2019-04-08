@@ -17,6 +17,9 @@ namespace Pulsee1.Devices.Controls.Binding
         DPadLeft,
         DPadRight,
         Start,
-        Back
+        Back,
+        BigButton,
+        JoystickRight,
+        JoystickLeft
     }
 }

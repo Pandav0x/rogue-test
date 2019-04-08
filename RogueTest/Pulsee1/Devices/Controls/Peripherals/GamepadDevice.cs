@@ -51,6 +51,7 @@ namespace Pulsee1.Devices.Controls.Peripherals
 
         private void Listen()
         {
+            List<GamepadEventArgs> statesHistory = new List<GamepadEventArgs>();
             GamepadEventHandler geh = new GamepadEventHandler();
             bool buttonPressed = false;
 
@@ -67,17 +68,37 @@ namespace Pulsee1.Devices.Controls.Peripherals
 
                     if (GamePad.GetState(this._gamepadId).Buttons.IsAnyButtonPressed && !buttonPressed)
                     {
+                        statesHistory.Add(buttonArgs);
                         this._context.OnButtonDown(buttonArgs);
                         buttonPressed = true;
                     }
                     if (!GamePad.GetState(this._gamepadId).Buttons.IsAnyButtonPressed && buttonPressed)
                     {
-                        this._context.OnButtonUp(buttonArgs);
+                        this._context.OnButtonUp(statesHistory[statesHistory.Count-1]);
                         buttonPressed = false;
                     }
+
+                    if (!GamepadStateWeighted.LeftStickStatesEquals(this._actualState, this._newState))
+                    {
+                        this._context.OnLeftStickMove(buttonArgs);
+                    }
+
+                    if (!GamepadStateWeighted.RightStickStatesEquals(this._actualState, this._newState))
+                    {
+                        this._context.OnRightStickMove(buttonArgs);
+                    }
+
+                    if (!GamepadStateWeighted.TriggerStatesEquals(this._actualState, this._newState))
+                    {
+                        //TODO: fire good event + good evnts args for the triggers
+
+                        Pulsee1.Utils.Display.xConsole.WriteLine(this._actualState.Triggers.Left.CompareTo(this._newState.Triggers.Left).ToString(), Pulsee1.Utils.Display.MessageType.Error);
+                    }
+
                 }
                 this._actualState = this._newState;
             } while (true);
+
             return;
         }
 
@@ -98,11 +119,13 @@ namespace Pulsee1.Devices.Controls.Peripherals
                 ans = GamepadButton.LB;
             if (this._newState.GamepadState.Buttons.RightShoulder == ButtonState.Pressed)
                 ans = GamepadButton.RB;
-            //Start/select
+            //Start/select/xbox button
             if (this._newState.GamepadState.Buttons.Start == ButtonState.Pressed)
                 ans = GamepadButton.Start;
             if (this._newState.GamepadState.Buttons.Back == ButtonState.Pressed)
                 ans = GamepadButton.Back;
+            if (this._newState.GamepadState.Buttons.BigButton == ButtonState.Pressed)
+                ans = GamepadButton.BigButton;
             //Dpad
             if (this._newState.GamepadState.DPad.IsUp)
                 ans = GamepadButton.DPadUp;
@@ -112,6 +135,11 @@ namespace Pulsee1.Devices.Controls.Peripherals
                 ans = GamepadButton.DPadLeft;
             if (this._newState.GamepadState.DPad.IsRight)
                 ans = GamepadButton.DPadRight;
+            //Joysticks buttons 
+            if (this._newState.GamepadState.Buttons.LeftStick == ButtonState.Pressed)
+                ans = GamepadButton.JoystickLeft;
+            if (this._newState.GamepadState.Buttons.RightStick == ButtonState.Pressed)
+                ans = GamepadButton.JoystickRight;
 
             return ans;
         }

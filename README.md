@@ -1,11 +1,9 @@
 # RogueTest
-Just a test of a game framework using the OpenTK/OpenGL libraries.
+Just a test of a game framework using the OpenTK/OpenGL library (2.0.0).
 
 You can find the OpenTK project [here](https://github.com/opentk/opentk).
 
 This project is still at its early stages, and the library I use is evolving without me doing the updates as it changes many things that can't be implemented here yet.
-
-I have plans to make this project into a NuGet package when it'll be more complete, thus ease its use.
 
 ## How to Install
 
@@ -24,7 +22,7 @@ There is two projects in the solution: `GamePadDetector` which is a test for the
 
 ### Linux
 
-1) Atempting to do this
+1) Atempting to write this
 
 ### Mac
 
@@ -48,6 +46,8 @@ All those files are in the `~/Pulsee1/` folder.
 ## Known isues
 
 * Ghost Gamepad
-    * The program will often detect an unknown gamepad even if none are pluged.
+    * The program will often detect one (or many) unknown gamepad(s) even if none are pluged.
 * Multi press on gamepad
-    * It is curently impossible to generate new inputs while a button is pressed.
+    * It is curently impossible to generate new inputs while a button is pressed. I'm currently trying to fix this issue
+* It's not working
+    * No

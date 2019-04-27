@@ -1,8 +1,8 @@
-﻿using OpenTK.Input;
+﻿using System;
+using OpenTK.Input;
 using System.Threading;
 using Pulsee1.Devices.Controls.Events.DeviceEventHandler.Args.Gamepad;
 using RogueTest.Pulsee1.Devices.Display.Window;
-using Pulsee1.Devices.Controls.Events.DeviceHandler.Gamepad;
 using System.Collections.Generic;
 using Pulsee1.Devices.Controls.Binding;
 
@@ -45,37 +45,40 @@ namespace Pulsee1.Devices.Controls.Peripherals
 
         private void GetNewGamepadState()
         {
-            this._newState = new GamepadStateWeighted(GamePad.GetState(this._gamepadId));
+            this._newState = new GamepadStateWeighted(GamePad.GetState(this._gamepadId), this._actualState);
             return;
         }
 
         private void Listen()
         {
-            List<GamepadEventArgs> statesHistory = new List<GamepadEventArgs>();
-            GamepadEventHandler geh = new GamepadEventHandler();
-            bool buttonPressed = false;
-
             do
             {
                 GetNewGamepadState();
                 if (this._actualState != this._newState)
                 {
+                    //TODO: remove this new statement (maybe in the first condition)
                     GamepadEventArgs buttonArgs = new GamepadEventArgs {
-                        Button = RetrievePressedButtons()
+                        Button = RetrievePressedButton()
                     };
 
                     //TODO: fix <= cannot get args when pressing one button while another one is pressed
 
-                    if (GamePad.GetState(this._gamepadId).Buttons.IsAnyButtonPressed && !buttonPressed)
+                    if (GamePad.GetState(this._gamepadId).Buttons.IsAnyButtonPressed)
                     {
-                        statesHistory.Add(buttonArgs);
+                        this._newState.buttonState[buttonArgs.Button] = true;
                         this._context.OnButtonDown(buttonArgs);
-                        buttonPressed = true;
                     }
-                    if (!GamePad.GetState(this._gamepadId).Buttons.IsAnyButtonPressed && buttonPressed)
+                    
+                    //TODO:
+                    if (!GamePad.GetState(this._gamepadId).Buttons.IsAnyButtonPressed)
                     {
-                        this._context.OnButtonUp(statesHistory[statesHistory.Count-1]);
-                        buttonPressed = false;
+                        Utils.Display.xConsole.WriteLine("List length - " + GamepadStateWeighted.GetButtonsChanges(this._actualState, this._newState).Count.ToString());
+                        foreach (GamepadButton btn in GamepadStateWeighted.GetButtonsChanges(this._actualState, this._newState))
+                        {
+                            this._context.OnButtonUp(new GamepadEventArgs { Button = btn });
+                            //Pulsee1.Utils.Display.xConsole.WriteLine(this._newState.buttonState[btn].ToString() + "YEA YEA YEAY !!");
+                            this._newState.buttonState[btn] = false;
+                        }
                     }
 
                     if (!GamepadStateWeighted.LeftStickStatesEquals(this._actualState, this._newState))
@@ -91,18 +94,15 @@ namespace Pulsee1.Devices.Controls.Peripherals
                     if (!GamepadStateWeighted.TriggerStatesEquals(this._actualState, this._newState))
                     {
                         //TODO: fire good event + good evnts args for the triggers
-
-                        Pulsee1.Utils.Display.xConsole.WriteLine(this._actualState.Triggers.Left.CompareTo(this._newState.Triggers.Left).ToString(), Pulsee1.Utils.Display.MessageType.Error);
+                        Utils.Display.xConsole.WriteLine(this._actualState.Triggers.Left.CompareTo(this._newState.Triggers.Left).ToString(), Pulsee1.Utils.Display.MessageType.Error);
                     }
-
                 }
-                this._actualState = this._newState;
+                this._actualState =  this._newState;
             } while (true);
-
             return;
         }
 
-        private GamepadButton RetrievePressedButtons()
+        private GamepadButton RetrievePressedButton()
         {
             GamepadButton ans = 0;
 

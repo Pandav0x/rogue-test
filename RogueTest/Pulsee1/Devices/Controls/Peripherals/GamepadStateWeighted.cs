@@ -1,6 +1,8 @@
 ﻿using OpenTK;
 using OpenTK.Input;
 using System;
+using System.Collections.Generic;
+using Pulsee1.Devices.Controls.Binding;
 
 namespace Pulsee1.Devices.Controls.Peripherals
 {
@@ -24,6 +26,11 @@ namespace Pulsee1.Devices.Controls.Peripherals
         public bool IsConnected;
         public int PacketNumber;
 
+        /// <summary>
+        /// Represents the state (pressed or not pressed) of all the buttons mapped on the gamepad
+        /// </summary>
+        public Dictionary<GamepadButton, bool> buttonState = new Dictionary<GamepadButton, bool>();
+
         private float _stickDZ;//stick dead zone
 
         public float StickDZ
@@ -38,23 +45,54 @@ namespace Pulsee1.Devices.Controls.Peripherals
 
         #endregion
 
+        #region ctor
         public GamepadStateWeighted(GamePadState state_, float stickDZ_ = 0.1f)
         {
             this.StickDZ = stickDZ_;
-            _gamepadState = state_;
-            return;
+            this._gamepadState = state_;
+
+            this.IsConnected = state_.IsConnected;
+            this.PacketNumber = state_.PacketNumber;
+        }
+
+        public GamepadStateWeighted(GamePadState state_, GamepadStateWeighted gm): this(state_)
+        {
+            if (gm.Equals(null))
+            {
+                foreach (GamepadButton btn in Enum.GetValues(typeof(GamepadButton)))
+                    this.buttonState.Add(btn, false);
+            }
+            else
+            {
+                foreach (GamepadButton btn in Enum.GetValues(typeof(GamepadButton)))
+                    this.buttonState.Add(btn, (gm.buttonState.ContainsKey(btn))? gm.buttonState[btn] : false);
+            }
         }
 
         public GamepadStateWeighted(GamepadStateWeighted state_)
         {
             this._gamepadState = state_._gamepadState;
-            return;
         }
+        #endregion
 
+        #region Buttons
+        public static List<GamepadButton> GetButtonsChanges(GamepadStateWeighted a, GamepadStateWeighted b)
+        {
+            List<GamepadButton> diff = new List<GamepadButton>();
 
-        /**
-         * Joysticks
-         */
+            foreach (GamepadButton btn in Enum.GetValues(typeof(GamepadButton)))
+            {
+                //Utils.Display.xConsole.WriteLine(btn.ToString().Substring(0,1) + "\t\ta: " + aButtonsState[btn].ToString() + "\tb: " + bButtonsState[btn].ToString()); //TODEL
+                if (a.buttonState[btn] != b.buttonState[btn])
+                    diff.Add(btn);
+                else
+                    diff.Remove(btn);
+            }
+            return diff;
+        }
+        #endregion
+
+        #region Joysticks
         public static bool LeftStickStatesEquals(GamepadStateWeighted a, GamepadStateWeighted b)
         {
             Vector2 aPosLeft = a.GamepadState.ThumbSticks.Left.Yx;
@@ -71,10 +109,9 @@ namespace Pulsee1.Devices.Controls.Peripherals
         {
             return LeftStickStatesEquals(a, b) && RightStickStatesEquals(a, b);
         }
+        #endregion
 
-        /**
-         * Triggers
-         */
+        #region Triggers
         public static bool LeftTriggerStatesEquals(GamepadStateWeighted a, GamepadStateWeighted b)
         {
             return a.GamepadState.Triggers.Left == b.GamepadState.Triggers.Left; ;
@@ -89,15 +126,15 @@ namespace Pulsee1.Devices.Controls.Peripherals
         {
             return LeftTriggerStatesEquals(a, b) && RightTriggerStatesEquals(a, b);
         }
+        #endregion
 
-
-        //operator definitions
+        #region operator definitions
         public static bool operator ==(GamepadStateWeighted a, GamepadStateWeighted b)
         {
             bool ans = a.GamepadState.DPad == b.GamepadState.DPad;
             ans &= a.GamepadState.Buttons == b.GamepadState.Buttons;
-            ans &= GamepadStateWeighted.TriggerStatesEquals(a, b);
-            ans &= GamepadStateWeighted.StickStatesEquals(a, b);
+            ans &= TriggerStatesEquals(a, b);
+            ans &= StickStatesEquals(a, b);
             return ans;
         }
 
@@ -105,6 +142,31 @@ namespace Pulsee1.Devices.Controls.Peripherals
         {
             return !(a==b);
         }
+
+        public override bool Equals(dynamic b)
+        {
+            if (b == null)
+                return false;
+            else
+                return this == b;
+        }
+
+        /// <summary>
+        /// This works as the = operator, avoiding some attributes to be asigned
+        /// </summary>
+        /// <param name="b"></param>
+        public void Assign(GamepadStateWeighted b)
+        {
+            this.Buttons = b.Buttons;
+            this.buttonState = b.buttonState;
+            this.DPad = b.DPad;
+            this.IsConnected = b.IsConnected;
+            this.PacketNumber = b.PacketNumber;
+            this.ThumbSticks = b.ThumbSticks;
+            this.Triggers = b.Triggers;
+            return;
+        }
+        #endregion
 
         public override string ToString()
         {

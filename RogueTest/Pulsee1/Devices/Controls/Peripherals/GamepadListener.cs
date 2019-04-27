@@ -20,6 +20,7 @@ namespace Pulsee1.Devices.Controls.Peripherals
             int index = 0;
             do
             {
+                //TODO : handle if no gamepad is connected (currently shows 1 controller)
                 xConsole.WriteLine(GamePad.GetName(index));
 
                 _gamepadDevices.Add(new GamepadDevice(index));

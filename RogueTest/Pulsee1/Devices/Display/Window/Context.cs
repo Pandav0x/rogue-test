@@ -80,10 +80,12 @@ namespace Pulsee1.Devices.Display.Window
         protected override void OnUpdateFrame(FrameEventArgs e)
         {
             // this is called every frame, put game logic here
+            // TODO: physic input manager update with pressed buttons (inputMgrPhysic)
         }
 
         protected override void OnRenderFrame(FrameEventArgs e)
         {
+            // TODO: render input manager update with pressed buttons (inputMgrRender)
             this.SwapBuffers();
             PulseGL.GLDrawScene();
 

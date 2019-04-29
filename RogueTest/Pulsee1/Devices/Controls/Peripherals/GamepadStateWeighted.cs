@@ -23,13 +23,10 @@ namespace Pulsee1.Devices.Controls.Peripherals
         public GamePadButtons Buttons;
         public GamePadDPad DPad;
 
+        private Dictionary<GamepadButton, bool> buttonState = new Dictionary<GamepadButton, bool>();
+
         public bool IsConnected;
         public int PacketNumber;
-
-        /// <summary>
-        /// Represents the state (pressed or not pressed) of all the buttons mapped on the gamepad
-        /// </summary>
-        public Dictionary<GamepadButton, bool> buttonState = new Dictionary<GamepadButton, bool>();
 
         private float _stickDZ;//stick dead zone
 
@@ -55,9 +52,15 @@ namespace Pulsee1.Devices.Controls.Peripherals
             this.PacketNumber = state_.PacketNumber;
         }
 
+        public GamepadStateWeighted(GamePadState state_, GamepadDevice caller_): this(state_)
+        {
+            foreach (GamepadButton btn in caller_._gamepadButtonState.Keys)
+                this.buttonState.Add(btn, caller_._gamepadButtonState[btn]);
+        }
+
         public GamepadStateWeighted(GamePadState state_, GamepadStateWeighted gm): this(state_)
         {
-            if (gm.Equals(null))
+            /*if (gm.Equals(null))
             {
                 foreach (GamepadButton btn in Enum.GetValues(typeof(GamepadButton)))
                     this.buttonState.Add(btn, false);
@@ -66,7 +69,7 @@ namespace Pulsee1.Devices.Controls.Peripherals
             {
                 foreach (GamepadButton btn in Enum.GetValues(typeof(GamepadButton)))
                     this.buttonState.Add(btn, (gm.buttonState.ContainsKey(btn))? gm.buttonState[btn] : false);
-            }
+            }*/
         }
 
         public GamepadStateWeighted(GamepadStateWeighted state_)

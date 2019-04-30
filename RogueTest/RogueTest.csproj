@@ -25,6 +25,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\RuleSet.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -58,6 +60,7 @@
     <Compile Include="Pulsee1\Devices\Controls\Binding\GamepadButton.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Binding\KeyBinding.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Events\DeviceEventHandler\Args\Gamepad\GamepadEventArgs.cs" />
+    <Compile Include="Pulsee1\Devices\Controls\InputManager.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Peripherals\GamepadDevice.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Peripherals\GamepadListener.cs" />
     <Compile Include="Pulsee1\Devices\Controls\Peripherals\GamepadStateWeighted.cs" />

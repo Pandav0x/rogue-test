@@ -2,6 +2,7 @@
 using OpenTK;
 using OpenTK.Graphics;
 using Pulsee1.Graphics;
+using RogueTest.Pulsee1.Devices.Controls;
 using RogueTest.Pulsee1.Devices.Display.Window;
 
 namespace Pulsee1.Devices.Display.Window
@@ -19,11 +20,9 @@ namespace Pulsee1.Devices.Display.Window
             this._parent = parent_;
             this._actualResolution = Resolutions.allResolution[(int)Resolutions.ResolutionType.StdResolution];
             ChangeIco(new System.Drawing.Icon(@"Pulsee1\KernelContent\Pictures\Icos\build.ico"));
-
-            return;
         }
 
-        #region Changing Stuff
+        #region Changes
         public void ChangeResolution(int width_, int height_)
         {
             Width = width_;

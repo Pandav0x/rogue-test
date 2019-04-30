@@ -1,5 +1,4 @@
-﻿using System;
-using Pulsee1.Devices.Display.Window;
+﻿using Pulsee1.Devices.Display.Window;
 using Pulsee1.Devices.Display.VirtualDevice;
 
 namespace Pulsee1.Devices.Display

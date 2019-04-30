@@ -41,7 +41,6 @@ namespace Pulsee1.Devices.Controls.Peripherals
                 _gamepadButtonState.Add(btn, false);
 
             _thread        = new Thread(Listen);
-
             return;
         }
 

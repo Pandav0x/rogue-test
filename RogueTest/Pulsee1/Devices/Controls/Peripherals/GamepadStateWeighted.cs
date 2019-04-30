@@ -23,6 +23,8 @@ namespace Pulsee1.Devices.Controls.Peripherals
         public GamePadButtons Buttons;
         public GamePadDPad DPad;
 
+        private Dictionary<GamepadButton, bool> buttonState = new Dictionary<GamepadButton, bool>();
+
         public bool IsConnected;
         public int PacketNumber;
 

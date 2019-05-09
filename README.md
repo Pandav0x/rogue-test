@@ -28,6 +28,10 @@ There is two projects in the solution: `GamePadDetector` which is a test for the
 
 1) Either you can do it yourself, or you can buy a computer running windows or linux.
 
+## Getting Started
+
+![wow](https://memegenerator.net/img/instances/81781952/lets-not-get-ahead-of-ourselves.jpg)
+
 ## Structure
 
 I will not detail all the code parts here, I will just give an overview of basically what the main folders contains.

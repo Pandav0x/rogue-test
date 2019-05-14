@@ -1,8 +1,7 @@
 ﻿using OpenTK;
 using OpenTK.Graphics;
-using Pulsee1.Devices.Controls.Events.DeviceEventHandler.Args.Gamepad;
 using Pulsee1.Utils.Display;
-using Pulsee1.Devices.Controls.Peripherals;
+using Pulsee1.Controls.Gamepad;
 using System;
 
 namespace RogueTest.Pulsee1.Devices.Display.Window

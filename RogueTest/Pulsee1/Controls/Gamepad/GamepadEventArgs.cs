@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using Pulsee1.Devices.Controls.Binding;
-using Pulsee1.Devices.Controls.Peripherals;
+using Pulsee1.Controls.Devices.Buttons;
 
-namespace Pulsee1.Devices.Controls.Events.DeviceEventHandler.Args.Gamepad
+namespace Pulsee1.Controls.Gamepad
 {
     class GamepadEventArgs : EventArgs
     {

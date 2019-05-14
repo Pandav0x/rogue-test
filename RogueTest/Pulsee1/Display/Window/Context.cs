@@ -2,7 +2,6 @@
 using OpenTK;
 using OpenTK.Graphics;
 using Pulsee1.Graphics;
-using RogueTest.Pulsee1.Devices.Controls;
 using RogueTest.Pulsee1.Devices.Display.Window;
 
 namespace Pulsee1.Devices.Display.Window

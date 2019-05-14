@@ -1,13 +1,12 @@
 ﻿using OpenTK.Input;
-using Pulsee1.Devices.Controls.Binding;
-using Pulsee1.Devices.Controls.Events.DeviceEventHandler.Args.Gamepad;
 using Pulsee1.Utils.Display;
-using RogueTest.Pulsee1.Devices.Display.Window;
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using RogueTest.Pulsee1.Devices.Display.Window;
+using Pulsee1.Controls.Devices.Buttons;
 
-namespace Pulsee1.Devices.Controls.Peripherals
+namespace Pulsee1.Controls.Gamepad
 {
     class GamepadDevice
     {
@@ -69,7 +68,7 @@ namespace Pulsee1.Devices.Controls.Peripherals
                 GetNewGamepadState();
                 if (_actualState != _newState)
                 {
-                    foreach (GamepadButton btn in RetrieveButton(ButtonState.Pressed))
+                    foreach (GamepadButton btn in RetrieveButton(OpenTK.Input.ButtonState.Pressed))
                     {
                         if (!_gamepadButtonState[btn])
                         {
@@ -77,7 +76,7 @@ namespace Pulsee1.Devices.Controls.Peripherals
                             _gamepadButtonState[btn] = true;
                         }
                     }
-                    foreach (GamepadButton btn in RetrieveButton(ButtonState.Released))
+                    foreach (GamepadButton btn in RetrieveButton(OpenTK.Input.ButtonState.Released))
                     {
                         if (_gamepadButtonState[btn])
                         {
@@ -108,7 +107,7 @@ namespace Pulsee1.Devices.Controls.Peripherals
             } while (true);
         }
 
-        private List<GamepadButton> RetrieveButton(ButtonState state)
+        private List<GamepadButton> RetrieveButton(OpenTK.Input.ButtonState state)
         {
             List<GamepadButton> ans = new List<GamepadButton>();
 

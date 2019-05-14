@@ -4,7 +4,7 @@ using OpenTK.Input;
 using Pulsee1.Utils.Display;
 using RogueTest.Pulsee1.Devices.Display.Window;
 
-namespace Pulsee1.Devices.Controls.Peripherals
+namespace Pulsee1.Controls.Gamepad
 {
     class GamepadListener
     {

@@ -1,10 +1,10 @@
 ﻿using OpenTK;
 using OpenTK.Input;
+using Pulsee1.Controls.Devices.Buttons;
 using System;
 using System.Collections.Generic;
-using Pulsee1.Devices.Controls.Binding;
 
-namespace Pulsee1.Devices.Controls.Peripherals
+namespace Pulsee1.Controls.Gamepad
 {
     class GamepadStateWeighted
     {

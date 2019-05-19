@@ -60,9 +60,12 @@
   <ItemGroup>
     <Compile Include="Pulsee1\AppData.cs" />
     <Compile Include="Pulsee1\Config.cs" />
+    <Compile Include="Pulsee1\Controls\Devices\Buttons\ButtonEvent.cs" />
+    <Compile Include="Pulsee1\Controls\Devices\Buttons\ButtonState.cs" />
     <Compile Include="Pulsee1\Controls\Devices\Buttons\KeyboardKey.cs" />
     <Compile Include="Pulsee1\Controls\Devices\Buttons\MouseButton.cs" />
     <Compile Include="Pulsee1\Controls\Devices\Gamepad.cs" />
+    <Compile Include="Pulsee1\Controls\Devices\IDevice.cs" />
     <Compile Include="Pulsee1\Controls\Devices\Keyboard.cs" />
     <Compile Include="Pulsee1\Controls\Devices\Mouse.cs" />
     <Compile Include="Pulsee1\Controls\Devices\Buttons\GamepadButton.cs" />

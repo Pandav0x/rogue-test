@@ -2,9 +2,9 @@
 using Pulsee1.Game.GameStates;
 using Pulsee1.Utils.Display;
 using Pulsee1.Devices.Display;
-using Pulsee1.Game.Generators;
 using Pulsee1.Display.Graphics;
 using Pulsee1.Graphics;
+using Pulsee1.Game;
 
 namespace Pulsee1
 {
@@ -13,16 +13,16 @@ namespace Pulsee1
         public GameStatesManager gasm;
         public DisplayManager dim;
         public GraphicsManager grm;
-        public GeneratorsManager gem;
+        public GameObjectManager gom;
 
         public GameManager()
         {
-            xConsole.WriteLine("Initializing management...");
+            xConsole.WriteLine("Loading game manager...");
 
             this.dim = new DisplayManager(this);
             this.grm = new GraphicsManager(this);
             this.gasm = new GameStatesManager(this);
-            this.gem = new GeneratorsManager();
+            gom = new GameObjectManager();
 
             PulseGL.GLSetContext(this);
 

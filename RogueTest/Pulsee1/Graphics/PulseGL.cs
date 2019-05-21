@@ -2,10 +2,7 @@
 using Pulsee1.Graphics.Textures;
 using Pulsee1.Graphics.Loader;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
 using Pulsee1.Utils.Display;
-using System.Threading;
 
 namespace Pulsee1.Graphics
 {

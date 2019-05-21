@@ -1,15 +1,10 @@
 ﻿using System.Collections.Generic;
 
-namespace Pulsee1.Game.GameObject
+namespace Pulsee1.Game.GameObjects
 { 
     abstract class GameObject
     {
-        private static List<GameObject> gameObjects;
-
-        public GameObject()
-        {
-            gameObjects.Add(this);
-        }
+        public GameObject(){}
 
         public abstract void Update();
 

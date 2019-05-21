@@ -17,7 +17,7 @@ namespace Pulsee1.Devices.Display.Window
                   GraphicsContextFlags.ForwardCompatible)
         {
             this._parent = parent_;
-            this._actualResolution = Resolutions.allResolution[(int)Resolutions.ResolutionType.StdResolution];
+            this._actualResolution = Tuple.Create(704, 396);
             ChangeIco(new System.Drawing.Icon(@"Pulsee1\KernelContent\Pictures\Icos\build.ico"));
         }
 
@@ -66,7 +66,6 @@ namespace Pulsee1.Devices.Display.Window
         {
             base.OnLoad(e);
 
-            ChangeResolution(640, Resolutions.HDResolution[640]);
             ChangeVSync(true);
             ChangeCursorVisible(true);
 

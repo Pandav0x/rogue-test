@@ -1,7 +1,7 @@
 ﻿using System;
 using Pulsee1.Utils.Display;
 
-namespace Pulsee1.Game.GameObject.Primitives
+namespace Pulsee1.Game.GameObjects.Primitives
 {
     class Square : GameObject
     {

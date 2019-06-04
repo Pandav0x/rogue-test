@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using Pulsee1.Utils.Display;
-using Pulsee1;
+using Pulsee.Utilities.Display;
+using Pulsee;
 
 namespace RogueTest
 {
